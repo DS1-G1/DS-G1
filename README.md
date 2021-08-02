@@ -1,10 +1,10 @@
 Projeto DS
 
-Colaboradores do projeto:
-  Lucas Soares Barros
-  Nicolas Chagas Souza
-  Itallo Cavalcante Gravina
-  Heitor Marques Simoes Barbosa
-  Carlos Rafael Vasconcelos de Matos
-  Daniela Pinheiro Barbosa
-  Ana Gabriela Godinho
+<strong>Colaboradores do projeto:</strong><br>
+  Lucas Soares Barros<br>
+  Nicolas Chagas Souza<br>
+  Itallo Cavalcante Gravina<br>
+  Heitor Marques Simoes Barbosa<br>
+  Carlos Rafael Vasconcelos de Matos<br>
+  Daniela Pinheiro Barbosa<br>
+  Ana Gabriela Godinho<br>
