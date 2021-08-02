@@ -1,10 +1,12 @@
-Projeto DS
+# Projeto de Desenvolvimento de Software 
 
-<strong>Colaboradores do projeto:</strong><br>
-  Lucas Soares Barros<br>
-  Nicolas Chagas Souza<br>
-  Itallo Cavalcante Gravina<br>
-  Heitor Marques Simoes Barbosa<br>
-  Carlos Rafael Vasconcelos de Matos<br>
-  Daniela Pinheiro Barbosa<br>
-  Ana Gabriela Godinho<br>
+
+|  Matrícula |             Aluno            |
+|:----------:|:----------------------------:|
+| 16/0125910 | itallo Cavalcante gravina -  |
+| 20/2016462 | Heitor Marques -             |
+| 20/0042327 | Nicolas Chagas -             |
+| 20/2015886 | Ana Gabriela Godinho -       |
+| 20/2016088 | Daniela Pinheiro Barbosa -   |
+| 20/2017700 | Lucas Soares Barros -        |
+| 15/0045182 | Rafael Ribeiro de Oliveira   |
