@@ -1,0 +1,135 @@
+.container-img {
+    position: relative;
+    width: 100%;
+  }
+
+.container-img img {
+  /* box-shadow: rgb(161, 161, 161) 5px 5px 10px;
+  -webkit-box-shadow: 5px 5px 10px rgb(161, 161, 161);
+-moz-box-shadow: 5px 5px 10px rgb(161, 161, 161); */
+
+/* box-shadow: -1px -1px 2px #325d6f;
+-webkit-box-shadow: -1px -1px 2px #325d6f;
+-moz-box-shadow: -1px -1px 2px #325d6f; */
+
+box-shadow: 0px 0px 0.1em rgb(161, 161, 161);
+-webkit-box-shadow: 0px 0px 0.3em rgb(161, 161, 161);
+-moz-box-shadow: 0px 0px 0.5em rgb(161, 161, 161);
+}
+  .image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    border-radius: 50% !important;
+  }
+
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .container-img:hover .image {
+    opacity: 0.3;
+  }
+
+  .container-img:hover .middle {
+    opacity: 1;
+  }
+
+  .text {
+    color: black;
+    font-size: 15px;
+    padding: 45px 10px;
+
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%232C3E50' stroke-width='1' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+    background-position: 50% 75%;
+    background-size: auto 5px;
+    background-repeat: repeat-x;
+    text-decoration: none;
+  }
+
+  .title-home{
+    font-size: 5em !important;
+    font-family: 'Francois One', sans-serif;
+    color: white !important;
+  }
+
+  .sub-title{
+    font-size: 3em !important;
+    margin-bottom: 1em !important;
+  }
+
+  .sub-title2{
+    font-size: 3em !important;
+    margin-bottom: 2em !important;
+    margin-top: 2em !important;
+  }
+
+  .has-mask{
+    background-attachment: fixed !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+  }
+
+
+body h1{
+  font-size: 2.5em !important;
+}
+
+span {
+  color:#14A9BA
+}
+
+.mask {
+  background-color: transparent !important;
+}
+
+.nav-item a {
+  color: white !important;
+}
+
+.nav-item :hover {
+  color: #14A9BA !important;
+}
+
+.nav-item .dropdown-menu a {
+  color: #14A9BA !important;
+}
+
+.nav-item .dropdown-menu :hover{
+  background-color: rgb(228, 227, 227);
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+  }
+  @-moz-keyframes fadeIn {
+  0% { opacity: 0;}
+  100% { opacity: 1; }
+  }
+  @-o-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+  }
+  @keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+  }
+
+  .fadeIn {
+-webkit-animation: fadeIn 3s ease-in-out;
+-moz-animation: fadeIn 3s ease-in-out;
+-o-animation: fadeIn 3s ease-in-out;
+animation: fadeIn 3s ease-in-out;
+}
