@@ -1,74 +1,34 @@
-# Easy Coffee
+# PetAdopt
 
-**Disciplina**: Arquitetura e Desenho de Software<br>
-**Código da Disciplina**: FGA0208<br>
-**Número do Grupo**: 05<br>
+**Número do Grupo**: 01<br>
+
+## Alunos
+
+|  Matrícula |             Aluno           |
+|:----------:|:---------------------------:|
+| 16/0125910 | itallo Cavalcante gravina   |
+| 20/2016462 | Heitor Marques              |
+| 18/0118005 | Carlos Rafael               |
+| 20/2015886 | Ana Gabriela Godinho        |
+| 20/2017700 | Lucas Soares Barros         |
 
 ## Sobre 
-O projeto consiste em um site de uma cafeteria, onde os donos da cafeteria podem vender diversos produtos e os seus clientes podem realizar a compra. 
+O projeto consiste em um site de uma 
 
-## Equipe
-
-<br>
-<div class="container">
-  <div class="row">
-      <div class="col-sm container-img">
-      <img src="./img/equipe/Danilo.png" alt="..." class="img-thumbnail image">
-          <div class="middle">
-            <div class="text">
-            <a href="https://github.com/danilow200">Danilo Domingo</a>
-            </div>
-          </div>
-    </div>
-    <div class="col-sm container-img">
-      <img src="./img/equipe/Gabrielle.png" alt="..." class="img-thumbnail image">
-          <div class="middle">
-            <div class="text">
-            <a href="https://github.com/Gabrielle-Ribeiro">Gabrielle Ribeiro</a>
-            </div>
-          </div>
-    </div>
-    <div class="col-sm container-img">
-        <img src="./img/equipe/Gustavo.jpeg" alt="..." class="img-thumbnail image">
-            <div class="middle">
-              <div class="text">
-                <a href="https://github.com/GustavoAPS">Gustavo Afonso</a>
-              </div>
-            </div>
-    </div>
-    <div class="col-sm container-img">
-      <img src="./img/equipe/Iago.jpeg" alt="..." class="img-thumbnail image">
-          <div class="middle">
-            <div class="text">
-            <a href="https://github.com/IagoTheophilo">Iago Theóphilo</a>
-            </div>
-          </div>
-    </div>
-    <div class="col-sm container-img">
-      <img src="./img/equipe/Itallo.jpeg" alt="..." class="img-thumbnail image">
-          <div class="middle">
-            <div class="text">
-            <a href="https://github.com/itallogravina">Itallo Gravina</a>
-            </div>
-          </div>
-    </div>
-    <div class="col-sm container-img">
-      <img src="./img/equipe/Maicon.jpeg" alt="..." class="img-thumbnail image">
-          <div class="middle">
-            <div class="text">
-            <a href="https://github.com/MaiconMares">Maicon Mares</a>
-            </div>
-          </div>
-    </div>
-   <div class="col-sm container-img">
-      <img src="./img/equipe/Rafael.png" alt="..." class="img-thumbnail image">
-          <div class="middle">
-            <div class="text">
-            <a href="https://github.com/rafaelflarrn">Rafael Ribeiro</a>
-            </div>
-          </div>
-    </div>
-  </div>
-</div>
+## Screenshots Primeira Entrega <<FOCO: DSW(Base)>>
 
 
+
+## Descritivo dos Principais Aspectos Técnicos 
+**Principal(is) Metodologia(s) Adotada(s)**: xxxxxx<br>
+**Principais Linguagens Utilizadas e/ou Pretendidas**: xxxxxx<br>
+**Principais Tecnologias Utilizadas e/ou Pretendidas**: xxxxxx<br>
+**Principal(is) Estilo(s) Arquitetural(is) Adotado(s)**: xxxxxx<br>
+
+## O Projeto está rodando?
+( ) SIM
+( ) NÃO
+Se SIM, insira um manual (ou um script) para auxiliar ainda mais os interessados em consultar o projeto.
+
+## Informações Complementares 
+Quaisquer outras informações sobre seu projeto podem ser descritas nessa seção.
