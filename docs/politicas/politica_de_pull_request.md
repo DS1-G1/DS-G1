@@ -10,6 +10,5 @@ Para abrir um Pull Request nesse projeto deverá ser utilizado o template de pul
 
 | Data | Versão | Descrição | Autor(es) |
 |------|------|------|------|
-|15/02/2021|1.0|Adiciona políticas de pull request|[Danilo Domingo](https://github.com/danilow200), [Gabrielle Ribeiro](https://github.com/Gabrielle-Ribeiro), [Gustavo Afonso](https://github.com/GustavoAPS), [Iago Theóphilo](https://github.com/IagoTheophilo), [Itallo Gravina](https://github.com/itallogravina), [Maicon Mares](https://github.com/MaiconMares), [Rafael Ribeiro](https://github.com/rafaelflarrn)|
-
+|16/08/2021|1.0|Adiciona políticas de request| [Itallo Gravina](https://github.com/itallogravina) |
 

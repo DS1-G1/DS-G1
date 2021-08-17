@@ -23,4 +23,4 @@ mapa_mental
 
 | Data | Versão | Descrição | Autor(es) |
 |------|------|------|------|
-|15/02/2021|1.0|Adiciona políticas de branchs|[Danilo Domingo](https://github.com/danilow200), [Gabrielle Ribeiro](https://github.com/Gabrielle-Ribeiro), [Gustavo Afonso](https://github.com/GustavoAPS), [Iago Theóphilo](https://github.com/IagoTheophilo), [Itallo Gravina](https://github.com/itallogravina), [Maicon Mares](https://github.com/MaiconMares), [Rafael Ribeiro](https://github.com/rafaelflarrn)|
+|16/08/2021|1.0|Adiciona políticas de branch| [Itallo Gravina](https://github.com/itallogravina) |
