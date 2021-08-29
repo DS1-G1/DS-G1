@@ -43,14 +43,7 @@ O projeto consiste em um site de uma
             </div>
           </div>
     </div>
-    <div class="col-sm container-img">
-      <img href="https://avatars.githubusercontent.com/u/87673186?v=4" alt="..." width="150" height="150" class="img-thumbnail image">
-          <div class="middle">
-            <div class="text">
-            <a href="https://github.com/gabkyu">Ana Godinho</a>
-            </div>
-          </div>
-    </div>
+
     
   </div>
 </div>
