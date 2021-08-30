@@ -4,7 +4,7 @@
 **Número do Grupo**: 01<br>
 
 ## Sobre 
-O projeto consiste em um site de uma 
+O projeto consiste em um site com o intuito de promover e auxiliar na adoção de animais em condições adversas, seja de vulnerabilidade ou não. Poderão ser colocados para adoção pets na qual foram abandonados por seus donos, ou até mesmo aqueles pets na qual o dono não poderá mais cuidar, por algum motivo, e terá que doá-lo.
 
 ## Equipe
 
