@@ -1,0 +1,24 @@
+.NavBarMain {
+  height: 70;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.logo {
+  justify-self: start;
+  margin-left: 10px;
+}
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 16px;
+  list-style: none;
+  text-align: center;
+  width: 70vw;
+  justify-content: end;
+  margin-top: 2rem;
+}

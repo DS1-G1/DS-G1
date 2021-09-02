@@ -1,0 +1,16 @@
+.button {
+  background-color: #546de5;
+  color: #fff;
+  font-size: 16px;
+  padding: 5px 25px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+  &:not(:disabled):hover {
+    filter: brightness(0.9);
+  }
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
