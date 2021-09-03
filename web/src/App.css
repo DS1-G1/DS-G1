@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
+html, body, html * {
+  font-family: 'Roboto', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.containerLogin{
+  display: grid;
+  height: 100vh;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.splitLeft{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* background: white; */
 }
 
-.App-link {
-  color: #61dafb;
+.loginLabel{
+  font-size: 40px;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.formContainer{
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+}
+
+.labelsInput{
+  font-weight: bold;
+  margin-left: 65px;
+  margin-bottom: 5px;
+}
+
+.alignIcon{
+  display: flex;
+  align-items: center;
+}
+
+.iconEmail{
+  margin-right: 20px;
+  margin-top: -30px;
+  width: 45px;
+  height: 45px;
+}
+
+.iconPassword{
+  margin-left: 5px;
+  margin-right: 25px;
+  margin-top: -30px;
+  width: 35px;
+  height: 45px;
+}
+
+.inputLogin{
+  width: 330px;
+  height: 70px;
+  border: 1px solid #989494;
+  padding-left: 10px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.inputLogin::placeholder{
+  font-size: 15px;
+}
+
+
+.centerlabel{
+  /* margin-left: 40px; */
+  text-align: center;
+}
+
+.loginButton{
+  margin-top: 20px;
+  width: 50px;
+  margin-left: 45%;
+}
+
+.splitRight{
+  margin-left: -11px;
+  background-image: url(./img/gato.png);
+  background-size: cover;
+  background-position: center;
 }
