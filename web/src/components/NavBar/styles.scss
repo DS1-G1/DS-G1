@@ -9,16 +9,25 @@
 
 .logo {
   justify-self: start;
-  margin-left: 10px;
+  margin-left: -0.1rem;
 }
 
 .nav-menu {
   display: grid;
   grid-template-columns: repeat(5, auto);
-  grid-gap: 16px;
+  grid-gap: 3%;
   list-style: none;
   text-align: center;
   width: 70vw;
   justify-content: end;
   margin-top: 2rem;
+  margin-left: 15%;
+  li:last-child {
+    //background-color: red;
+    margin-top: -0.95rem;
+  }
+}
+.nav-links {
+  font-weight: bold;
+  text-decoration: none;
 }
