@@ -7,7 +7,9 @@ import "./styles.scss";
 const Navbar = () => {
   return (
     <nav className="NavBarMain">
-      <img className="logo" src={logo}></img>
+      <a href="/">
+        <img className="logo" src={logo} alt="Logo da PetAdopt" />
+      </a>
       <ul className="nav-menu">
         {navBarItens.map((item, index) => {
           return (
@@ -19,14 +21,11 @@ const Navbar = () => {
           );
         })}
         <li>
-        <a href="/login">
-          <ButtonBlue>
-            Login
-          </ButtonBlue>
-        </a>
+          <a href="/login">
+            <ButtonBlue>Login</ButtonBlue>
+          </a>
         </li>
       </ul>
-      
     </nav>
   );
 };
