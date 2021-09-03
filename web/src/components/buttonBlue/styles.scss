@@ -8,7 +8,7 @@
   border-radius: 5px;
   cursor: pointer;
   &:not(:disabled):hover {
-    filter: brightness(0.9);
+    background-color: #596275;
   }
   &:disabled {
     opacity: 0.6;
