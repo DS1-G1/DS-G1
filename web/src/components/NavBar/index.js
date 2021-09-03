@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../img/logo.png";
-import navBarItens from "./itens";
+import navBarItens from "../../utils/itens";
 import ButtonBlue from "../buttonBlue";
 import "./styles.scss";
 
@@ -18,8 +18,15 @@ const Navbar = () => {
             </li>
           );
         })}
+        <li>
+        <a href="/login">
+          <ButtonBlue>
+            Login
+          </ButtonBlue>
+        </a>
+        </li>
       </ul>
-      <ButtonBlue>Login</ButtonBlue>
+      
     </nav>
   );
 };
