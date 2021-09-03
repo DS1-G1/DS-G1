@@ -30,4 +30,7 @@
 .nav-links {
   font-weight: bold;
   text-decoration: none;
+  &:hover {
+    color: #3dc1d3;
+  }
 }
