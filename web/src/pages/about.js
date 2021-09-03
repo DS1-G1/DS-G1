@@ -1,20 +1,16 @@
 import React from "react";
 import Navbar from "../components/NavBar";
+import "../styles/stylesDefault.scss";
 
 const About = () => {
-  return <div>
+  return (
+    <div>
       <Navbar></Navbar>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "90vh",
-        }}
-      > 
+      <div className="default">
         <h1>About</h1>
       </div>
-  </div>
+    </div>
+  );
 };
 
 export default About;
