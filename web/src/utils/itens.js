@@ -1,22 +1,22 @@
 const navBarItens = [
   {
     title: "Home",
-    url: "#",
+    url: "/",
     className: "nav-links",
   },
   {
     title: "Sobre",
-    url: "#",
+    url: "/about",
     className: "nav-links",
   },
   {
     title: "Adoção",
-    url: "#",
+    url: "/adopt",
     className: "nav-links",
   },
   {
     title: "Cadastre-se",
-    url: "#",
+    url: "/signUp",
     className: "nav-links",
   },
 ];
