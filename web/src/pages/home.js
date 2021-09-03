@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/NavBar";
 
-const Adopt = () => {
+const Home = () => {
   return (
     <div>
       <Navbar></Navbar>
@@ -13,10 +13,10 @@ const Adopt = () => {
           height: "90vh",
         }}
       > 
-        <h1>Adopt</h1>
+        <h1>Home</h1>
       </div>
     </div>
   );
 };
 
-export default Adopt;
+export default Home;

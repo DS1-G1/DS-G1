@@ -1,18 +1,5 @@
-import React from "react";
-
-const Home = () => {
-  return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "90vh",
-      }}
-    >
-      <h1>Home</h1>
-    </div>
-  );
-};
-
-export default Home;
+export {default as Home} from './home';
+export {default as About} from './about';
+export {default as Adopt} from './adopt';
+export {default as Login} from './login';
+export {default as SignUp} from './signup';
