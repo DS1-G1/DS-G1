@@ -6,5 +6,5 @@
 - 2 Modelagem
     - 2.1 Modelagem UML Estática
     - [Digrama de classes](/diagrama/diagrama.md)
-
+- [Sprints](/sprints/sprints.md)
 
