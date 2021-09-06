@@ -19,7 +19,7 @@ Data de término da Sprint: 26/07/2021
 ## Atividades Alocadas para a Sprint
 
 | Atividade | É dívida técnica? | Responsáveis Principais |
-|----------|------------|----------|------------|
+|----------|------------|----------|
 |Iniciar estudos sobre tecnologias| | [Itallo Gravina](https://github.com/itallogravina) |
 |Iniciar estudos sobre tecnologias| | [Heitor Marques](https://github.com/heitormsb) |
 |Iniciar estudos sobre tecnologias| | [Carlos Rafael](https://github.com/CarlosZoft) |
