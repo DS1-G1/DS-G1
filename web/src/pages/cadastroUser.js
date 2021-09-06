@@ -1,4 +1,5 @@
 import React from "react";
+
 import "../styles/cadastroUser.css";
 
 
@@ -10,15 +11,15 @@ function TelaCadastroUser () {
   const handleChangeAdopt = () => {
     setCheckedAdopt(!checkedAdopt);
   };
-
- 
   const handleChangeDivulgar = () => {
     setCheckedDivulgar(!checkedDivulgar);
   };
 
+  let selectAdocaoEnable=true
 
-  console.log(checkedAdopt)
-  console.log(checkedDivulgar)
+  if(checkedDivulgar===true)
+  selectAdocaoEnable=false
+
 
   return(
     <div className="containerLogin">
@@ -39,8 +40,8 @@ function TelaCadastroUser () {
 
           <div> 
             <label>Estou doando pois: </label>
-            <select name="motivo" id="motivoDoacao">
-              <option value="">Selecionar:</option>
+            <select name="motivo" id="motivoDoacao" defaultValue={''} disabled={selectAdocaoEnable}>
+              <option value="" disabled>Selecionar:</option>
               <option value="ONG">Sou responsavel por uma ONG de adoção</option>
               <option value="criador independente">Sou criador(a) de animais domésticos independente</option>
               <option value="sem condicoes">Achei um Pet e não tenho condição de ficar com ele</option>
