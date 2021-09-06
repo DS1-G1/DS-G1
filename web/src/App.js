@@ -1,10 +1,10 @@
 import React from "react";
 import "./App.css";
-import CadastroUser from "./pages/cadastroUser.js";
+import SobreOSite from "./pages/sobreOSite.js";
 
 function App() {
   return (
-    <CadastroUser />
+    <SobreOSite />
   );
 }
 
