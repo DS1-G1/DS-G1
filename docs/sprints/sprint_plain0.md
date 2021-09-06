@@ -1,3 +1,4 @@
+
 # Sprint 0 - Planning
 
 Data: 20/07/2021
@@ -13,7 +14,7 @@ Data de término da Sprint: 26/07/2021
 - Escolha o horário das dailys: serão realizadas as terças das 14-16h pelo Microsoft Teams. Foi criado um grupo exclusivo para as dailys.
 
 - Iniciar estudos sobre tecnologias básicas de desenvolvimento e preparação de ambiente: 
-	- Git,, HTML, JS
+	- Git, HTML, JS
 
 ## Atividades Alocadas para a Sprint
 
@@ -22,7 +23,7 @@ Data de término da Sprint: 26/07/2021
 |Iniciar estudos sobre tecnologias| | [Itallo Gravina](https://github.com/itallogravina) |
 |Iniciar estudos sobre tecnologias| | [Heitor Marques](https://github.com/heitormsb) |
 |Iniciar estudos sobre tecnologias| | [Carlos Rafael](https://github.com/CarlosZoft) |
-|Iniciar estudos sobre tecnologias | | [Lucas Soares Barros](https://github.com/lucaaassb) |
+|Iniciar estudos sobre tecnologias| | [Lucas Soares Barros](https://github.com/lucaaassb) |
 
 ### Observações
 <p align="justify">Os responsáveis principais pela atividade não são necessariamente os únicos a realizarem a atividade, mas sim os responsáveis por gerenciar o que deve ser feito para a tarefa ser cumprida, agendando reuniões e solicitando a colaboração dos demais membros.</p>
