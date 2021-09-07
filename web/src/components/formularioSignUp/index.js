@@ -12,16 +12,22 @@ const options = [   { value: '', label: 'Espécie' },   { value: '', label: 'Por
   return ( 
 
   <S.Conteiner>
+    <S.Title>Cadastre o pet para adoção</S.Title>
 
+    <input type="" />
     <S.Containerselect> 
-        <Select className= "select" defaultValue={options[0]} options={especie}/> 
-        <Select className= "select" defaultValue={options[1]} options={porte}/> 
-        <Select className= "select" defaultValue={options[2]} options={idade}/> 
-        <Select className= "select" defaultValue={options[3]} options={local}/>
+        <>
+        <Select className="select" defaultValue={options[0]} options={especie}/> 
+        <Select className="select" defaultValue={options[1]} options={porte}/> 
+        <Select className="select" defaultValue={options[2]} options={idade}/> 
+        </>
+        <>
+        <Select className="select" defaultValue={options[3]} options={local}/>
+        {/* <S.Imput type="text"/> */}
+        </>
     </S.Containerselect>
+        <S.Imput className="sobre" type="text" />
 
-    <S.Imput value="Microchip"/>
-    <S.Imput value="Sobre o pet"/>
     
     <Button style={{padding: "20px 45px"}}>Confirmar Pet </Button>
 
