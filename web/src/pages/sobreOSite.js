@@ -3,6 +3,10 @@ import "../styles/sobreOSite.css";
 import imgCrop1 from "../img/imgCrop1.png"
 import imgCrop2 from "../img/imgCrop2.png"
 import imgCrop3 from "../img/imgCrop3.png"
+import logo from "../img/logo.png"
+import iconFacebook from "../img/iconFacebook.png"
+import iconTwitter from "../img/iconTwitter.png"
+import iconInstagram from "../img/iconInstagram.png"
 
 
 function SobreOSite () {
@@ -38,25 +42,58 @@ function SobreOSite () {
 
         <div className="mainBackgroud">
 
-          <label>Adote hoje seu amigo para te fazer companhia</label>
-          <div>
-            <label>Cerca de X animais sao adotados todos os dias, faca parte desse grupo e ganhe um companheiro</label>
-            <button>Adote Agora</button>
+          <div className="containerMain">
+            <div className="textoAdote">
+              <label className="tituloAdote">Adote hoje seu amigo para te fazer companhia</label>
+              <div>
+                <label className="textoConteudo">Cerca de X animais sao adotados todos os dias, faca parte desse grupo e ganhe um companheiro</label>
+              </div>
+            </div>
+            <button className="alignButtonMain">Adote Agora</button>
           </div>
-
-          <label>Cadastre um Pet para adocao e salve vidas</label>
-          <div>
-            <button>Cadastre Agora</button>
-            <label>Nao deixe um animal de fora, ajude achar uma casa para esse fofucho colocando para outros adotarem</label>
+          
+          <div className="containerMain">
+            <button className="alignButtonMain">Cadastre Agora</button>
+            <div className="textoCadastre">
+              <label className="tituloCadastre">Cadastre um Pet para adocao e salve vidas</label>
+              <div>
+                <label className="textoConteudo">Nao deixe um animal de fora, ajude achar uma casa para esse fofucho colocando para outros adotarem</label>
+              </div>
+            </div>
           </div>
+          
+          
 
         </div>
 
 
       </div>
 
-      <div className="footer">
-
+      <div className="footer containerF">
+        <div>
+          <img src={logo} alt="imgCrop2" />
+        </div>
+        <div className="sobreSite">
+          <li><a href={"/#"}>Serviços</a></li>
+          <li><a href={"/#"}>Adoção</a></li>
+          <li><a href={"/#"}>Contato do site</a></li>
+        </div>
+        <div className="redesSociais">
+          <li>Siga a gente:</li>
+          <li>
+            <img src={iconFacebook} alt="iconFacebook" className="iconFooter"/>
+            <a href="/#">Facebook</a>
+          </li>
+          <li>
+          <img src={iconTwitter} alt="iconTwitter" className="iconFooter"/>
+            <a href="/#">Twitter</a>
+            </li>
+          <li>
+          <img src={iconInstagram} alt="iconInstagram" className="iconFooter"/>
+            <a href="/#">Instagram</a>
+            </li>
+        </div>
+          
       </div>
 
     </div>
