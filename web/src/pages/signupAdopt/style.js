@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 
 export const Conteiner = styled.div` 
-margin-top: 150px;
+    margin-top: 150px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
@@ -14,8 +14,10 @@ margin-top: 150px;
 `; 
 
 export const Image = styled.img` 
- border-radius: 15px;
- position: relative;
-    height: 79vh;
+    border-radius: 15px;
+    position: relative;
+    height: 80vh;
     width: 50vw;
+    margin-left: 15%;
+    margin-top: -10%;
 `; 

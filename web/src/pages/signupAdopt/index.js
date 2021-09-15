@@ -10,13 +10,11 @@ const signupAdopt = () => {
   <>
     <Navbar/>
     <S.Conteiner>
-  
-     <S.Image src={logo} alt="Logo"/>
+    
+    <S.Image src={logo} alt="Logo"/>
       <Form/>
-
     </S.Conteiner>
-
- </>
+</>
   );
 };
 

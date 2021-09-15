@@ -12,9 +12,13 @@ const options = [   { value: '', label: 'Espécie' },   { value: '', label: 'Por
   return ( 
 
   <S.Conteiner>
-    <S.Title>Cadastre o pet para adoção</S.Title>
+    <S.Title >Faça o cadastro do pet</S.Title>
 
-    <input type="" />
+    <label for="avatar">Selecione a foto do seu pet &#10132;</label>
+    <input type="file"
+          id="avatar" name="avatar"
+          accept="image/png, image/jpeg"/>
+
     <S.Containerselect> 
         <>
         <Select className="select" defaultValue={options[0]} options={especie}/> 
@@ -23,10 +27,9 @@ const options = [   { value: '', label: 'Espécie' },   { value: '', label: 'Por
         </>
         <>
         <Select className="select" defaultValue={options[3]} options={local}/>
-        {/* <S.Imput type="text"/> */}
         </>
     </S.Containerselect>
-        <S.Imput className="sobre" type="text" />
+        <S.Imput className="sobre" placeholder="Sobre o pet" type="text" />
 
     
     <Button style={{padding: "20px 45px"}}>Confirmar Pet </Button>
