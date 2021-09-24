@@ -28,7 +28,7 @@
   margin-left: -280px;
 }
 
-.formContainer{
+.signUpformContainer{
   display: flex;
   flex-direction: column;
 }
@@ -67,9 +67,9 @@
   text-align: center;
 }
 
-.loginButton{
+.signUpButton{
   /* margin-top: 20px; */
-  width: 180px;
+  width: 190px;
   height: 58px;
   /* margin-left: 45%; */
 }

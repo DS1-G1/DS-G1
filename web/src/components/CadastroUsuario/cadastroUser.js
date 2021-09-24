@@ -1,5 +1,5 @@
 import React from "react";
-
+import ButtonBlue from "../buttonBlue";
 import "./cadastroUser.css";
 
 
@@ -49,7 +49,7 @@ const TelaCadastroUser = () => {
           </div>
         </div>
 
-        <form className="formContainer">
+        <form className="signUpformContainer">
 
           <div className="alignIcon">
             <input placeholder="Digite seu nome" type="text" className="inputLogin marginInput"></input>
@@ -73,7 +73,9 @@ const TelaCadastroUser = () => {
 
           <div className="alignIcon">
             <input placeholder="Confirme sua senha" type="password" className="inputLogin marginInput"></input>
-            <button type="submit" className="loginButton">Confirmar Cadastro</button>
+            <dev className="signUpButton">
+              <ButtonBlue type="submit">Confirmar Cadastro</ButtonBlue>
+            </dev>
           </div>
           
         </form>

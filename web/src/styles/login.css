@@ -22,7 +22,7 @@
  margin-top: 80px;
 }
 
-.labelsInput{
+.labelsInputLogin{
  font-weight: bold;
  margin-left: 65px;
  margin-bottom: 5px;
@@ -35,7 +35,7 @@
 
 .iconEmail{
  margin-right: 20px;
- margin-top: -30px;
+ /* margin-top: -30px; */
  width: 45px;
  height: 45px;
 }
@@ -43,7 +43,7 @@
 .iconPassword{
  margin-left: 5px;
  margin-right: 25px;
- margin-top: -30px;
+ /* margin-top: -30px; */
  width: 35px;
  height: 45px;
 }
@@ -75,6 +75,7 @@
 
 .splitRight{
  margin-left: -11px;
+ background-image: url(../img/gato.png);
  background-size: cover;
  background-position: center;
 } 
