@@ -1,12 +1,14 @@
 import React from "react";
 import "../styles/login.css";
+import Navbar from "../components/NavBar";
+
 
 
 
 function Login () {
-  return(
+  return(<>
+    <Navbar></Navbar>
     <div className="containerLogin">
-
       <div className="splitLeft">
         <div className="centerlabel loginLabel">Login</div>
 
@@ -35,6 +37,7 @@ function Login () {
       <div className="splitRight">
       </div>
     </div>
+    </>
   );
 };
 

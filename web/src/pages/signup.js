@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/NavBar";
 import "../styles/stylesDefault.scss";
-import Form from './cadastroUser'
+import Form from '../components/CadastroUsuario/cadastroUser'
 
 const SignUp = () => {
   return (
