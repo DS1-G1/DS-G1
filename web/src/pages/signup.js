@@ -1,14 +1,15 @@
 import React from "react";
 import Navbar from "../components/NavBar";
 import "../styles/stylesDefault.scss";
+import Form from './cadastroUser'
 
 const SignUp = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <div className="default">
-        <h1>Sign Up</h1>
-      </div>
+  
+        <Form/>
+
     </div>
   );
 };
