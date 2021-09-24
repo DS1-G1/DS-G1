@@ -39,10 +39,8 @@ function TelaLogin () {
 
       <div className="splitRight">
       </div>
-
     </div>
-  )
-}
+  );
+};
 
-
-export default TelaLogin;
+export default Login;
