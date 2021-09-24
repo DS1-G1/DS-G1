@@ -5,6 +5,7 @@ Aqui se encontra a documentação das nossas Sprints, tendo documentos referente
 -   [Sprint 0 - Planning](/sprints/sprint_plain0.md)
 -   [Sprint 1 - Planning](/sprints/sprint_plain1.md)
 -   [Sprint 2 - Planning](/sprints/sprint_plain2.md)
+-   [Sprint 3 - Planning](/sprints/sprint_plain3.md)
 
 ## Versionamento
 | Data | Versão | Descrição | Autor(es) |
