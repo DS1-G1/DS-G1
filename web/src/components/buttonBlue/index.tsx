@@ -22,16 +22,11 @@ const Button: React.FC<Props> = ({
     radius,
     width,
     icon,
-
-
   }) => { 
 
-
   return (
-    
     <S.Wrapper 
       onClick={onClick}
-     
       style={{
          backgroundColor: color,
          border,
