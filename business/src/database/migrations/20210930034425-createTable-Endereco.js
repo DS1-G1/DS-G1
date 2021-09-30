@@ -30,8 +30,8 @@ module.exports = {
                 model: "Estado",
                 key: "id_estado",
               },
-              onUpdate: "SET NULL",
-              onDelete: "SET NULL",
+              onUpdate: "RESTRICT",
+              onDelete: "RESTRICT",
             }
           },
           { transaction }

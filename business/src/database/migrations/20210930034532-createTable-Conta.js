@@ -40,8 +40,8 @@ module.exports = {
                 model: "Endereco",
                 key: "cep",
               },
-              onUpdate: "SET NULL",
-              onDelete: "SET NULL",
+              onUpdate: "RESTRICT",
+              onDelete: "RESTRICT",
             },
           },
           { transaction }
