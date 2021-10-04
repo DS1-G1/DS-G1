@@ -1,5 +1,6 @@
 const sequelize = require("../database");
 const { DataTypes, Sequelize } = require("sequelize");
+const Endereco = require('./Endereco')
 
 const Conta = sequelize.define(
   "Conta", {
@@ -40,5 +41,9 @@ const Conta = sequelize.define(
     timestamps: false,
   }
 );
+
+Conta.hasOne(Endereco, {
+  foreignKey: 'cep'
+})
 
 module.exports = Conta;

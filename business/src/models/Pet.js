@@ -1,5 +1,7 @@
 const sequelize = require("../database");
 const { DataTypes } = require("sequelize");
+const Conta = require('./Conta');
+const Endereco = require('./Endereco');
 
 const Pet = sequelize.define(
   "Pet", {
@@ -48,5 +50,12 @@ const Pet = sequelize.define(
     timestamps: false,
   }
 );
+Pet.hasOne(Endereco, {
+  foreignKey: 'cep'
+})
+
+Pet.belongsTo(Conta, {
+  foreignKey: 'id_conta',
+})
 
 module.exports = Pet;
