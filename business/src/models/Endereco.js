@@ -1,5 +1,6 @@
 const sequelize = require("../database");
 const { DataTypes } = require("sequelize");
+const Estado = require("./Estado");
 
 const Endereco = sequelize.define(
   "Endereco",
@@ -31,5 +32,11 @@ const Endereco = sequelize.define(
     timestamps: false,
   }
 );
+
+Endereco.hasOne(Estado, {
+  foreignKey: 'id_estado',
+  as: 'estado'
+})
+
 
 module.exports = Endereco;
