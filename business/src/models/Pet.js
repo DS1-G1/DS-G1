@@ -57,5 +57,9 @@ Pet.hasOne(Endereco, {
 Pet.belongsTo(Conta, {
   foreignKey: 'id_conta',
 })
+Conta.hasMany(Pet, {
+  foreignKey: 'id_conta'
+})
+
 
 module.exports = Pet;
