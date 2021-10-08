@@ -1,5 +1,6 @@
-const sequelize = require("../database");
-const { DataTypes } = require("sequelize");
+const databaseConfig = require("../config/database");
+const { Sequelize, DataTypes } = require("sequelize");
+const sequelize = new Sequelize(databaseConfig);
 const Estado = require("./Estado");
 
 const Endereco = sequelize.define(
