@@ -1,5 +1,6 @@
-const sequelize = require("../database");
-const { DataTypes } = require("sequelize");
+const databaseConfig = require("../config/database");
+const { Sequelize, DataTypes } = require("sequelize");
+const sequelize = new Sequelize(databaseConfig);
 const Conta = require('./Conta');
 
 const Ong = sequelize.define(
@@ -30,6 +31,7 @@ const Ong = sequelize.define(
 );
 Ong.hasOne(Conta, {
   foreignKey: 'id_conta',
+  as: "conta"
 })
 
 module.exports = Ong;

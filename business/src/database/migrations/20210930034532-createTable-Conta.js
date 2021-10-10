@@ -35,7 +35,7 @@ module.exports = {
             },
             cep: {
               type: Sequelize.DataTypes.STRING,
-              allowNull: false,
+              allowNull: true,
               references: {
                 model: "Endereco",
                 key: "cep",

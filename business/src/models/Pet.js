@@ -1,5 +1,6 @@
-const sequelize = require("../database");
-const { DataTypes } = require("sequelize");
+const databaseConfig = require("../config/database");
+const { Sequelize, DataTypes } = require("sequelize");
+const sequelize = new Sequelize(databaseConfig);
 const Conta = require('./Conta');
 const Endereco = require('./Endereco');
 
@@ -56,6 +57,12 @@ Pet.hasOne(Endereco, {
 
 Pet.belongsTo(Conta, {
   foreignKey: 'id_conta',
+  as: "conta"
 })
+Conta.hasMany(Pet, {
+  foreignKey: 'id_conta',
+  as: "pets"
+})
+
 
 module.exports = Pet;
