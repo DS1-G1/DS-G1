@@ -35,7 +35,7 @@ Usuario.hasOne(Conta, {
   foreignKey: 'id_conta',
   as: "conta"
 })
-Conta.hasMany(Usuario, {
+Conta.hasOne(Usuario, {
   foreignKey: 'id_conta',
   as: "usuario"
 })
