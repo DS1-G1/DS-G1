@@ -1,11 +1,12 @@
 const databaseConfig = require("../config/database");
 const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = new Sequelize(databaseConfig);
-const Conta = require('./Conta');
-const Endereco = require('./Endereco');
+const Conta = require("./Conta");
+const Endereco = require("./Endereco");
 
 const Pet = sequelize.define(
-  "Pet", {
+  "Pet",
+  {
     id_pet: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
@@ -13,7 +14,7 @@ const Pet = sequelize.define(
       allowNull: false,
     },
     especie: {
-      type: DataTypes.STRING,
+      type: DataTypes.ENUM(["Cachorro", "Gato"]),
       allowNull: false,
     },
     nome: {
@@ -21,48 +22,43 @@ const Pet = sequelize.define(
       allowNull: false,
     },
     sexo: {
-      type: DataTypes.ENUM(['Femea', 'Macho', 'Indefinido']),
-      defaultValue: 'Indefinido',
+      type: DataTypes.ENUM(["Femea", "Macho", "Indefinido"]),
+      defaultValue: "Indefinido",
       allowNull: false,
     },
     porte: {
-      type: DataTypes.ENUM(['Pequeno', 'Medio', 'Grande']),
+      type: DataTypes.ENUM(["Pequeno", "Medio", "Grande"]),
       allowNull: false,
     },
     raca: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: true,
     },
     dataNascimento: {
       type: DataTypes.DATE,
-      allowNull: false
+      allowNull: false,
     },
     cep: {
       type: DataTypes.STRING,
       allowNull: false,
+      references: {
+        model: Endereco,
+        key: "cep",
+      },
     },
     id_conta: {
       type: DataTypes.INTEGER,
       allowNull: false,
-    }
+      references: {
+        model: Conta,
+        key: "id_conta",
+      },
+    },
   },
   {
     tableName: "Pet",
     timestamps: false,
   }
 );
-Pet.hasOne(Endereco, {
-  foreignKey: 'cep'
-})
-
-Pet.belongsTo(Conta, {
-  foreignKey: 'id_conta',
-  as: "conta"
-})
-Conta.hasMany(Pet, {
-  foreignKey: 'id_conta',
-  as: "pets"
-})
-
 
 module.exports = Pet;

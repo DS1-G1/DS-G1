@@ -1,10 +1,12 @@
 const databaseConfig = require("../config/database");
 const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = new Sequelize(databaseConfig);
-const Endereco = require('./Endereco');
+const Endereco = require("./Endereco");
+const Pet = require("./Pet");
 
 const Conta = sequelize.define(
-  "Conta", {
+  "Conta",
+  {
     id_conta: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
@@ -22,15 +24,15 @@ const Conta = sequelize.define(
     senha: {
       type: DataTypes.STRING,
       allowNull: false,
-    }, 
+    },
     isAdmin: {
       type: Sequelize.DataTypes.BOOLEAN,
       allowNull: false,
-      defaultValue: false
+      defaultValue: false,
     },
     telefone: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     cep: {
       type: Sequelize.DataTypes.STRING,
@@ -44,8 +46,20 @@ const Conta = sequelize.define(
 );
 
 Conta.hasOne(Endereco, {
-  foreignKey: 'cep',
-  as:"endereco"
-})
+  foreignKey: "cep",
+  as: "endereco",
+});
+Endereco.hasMany(Conta, {
+  foreignKey: "cep",
+  as: "conta",
+});
+Conta.hasMany(Pet, {
+  foreignKey: "id_conta",
+  as: "pet",
+});
+Pet.belongsTo(Conta, {
+  foreignKey: "id_conta",
+  as: "conta",
+});
 
 module.exports = Conta;

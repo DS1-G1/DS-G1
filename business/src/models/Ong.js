@@ -1,10 +1,11 @@
 const databaseConfig = require("../config/database");
 const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = new Sequelize(databaseConfig);
-const Conta = require('./Conta');
+const Conta = require("./Conta");
 
 const Ong = sequelize.define(
-  "Ong", {
+  "Ong",
+  {
     id_ong: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
@@ -30,12 +31,12 @@ const Ong = sequelize.define(
   }
 );
 Ong.hasOne(Conta, {
-  foreignKey: 'id_conta',
-  as: "conta"
-})
+  foreignKey: "id_conta",
+  as: "conta",
+});
 Conta.hasOne(Ong, {
-  foreignKey: 'id_conta',
-  as: 'ong'
-})
+  foreignKey: "id_conta",
+  as: "ong",
+});
 
 module.exports = Ong;
