@@ -33,5 +33,14 @@ export const LabelList = styled.div`
     font-weight: bold;
     justify-content: space-evenly;
     align-items: center;
-
+`
+export const ListConteiner = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+export const LabelPainel = styled.div`
+    font-weight: bold;
+    font-size: 35px;
+    color: #596275;
 `
