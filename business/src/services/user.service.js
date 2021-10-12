@@ -45,14 +45,12 @@ export default class UserService {
   }
 
   static async createUser(body) {
-    const { nome, email, senha, telefone, cep, sobreNome, dataNascimento } =
-      body;
+    const { nome, email, senha, telefone, cep, sobreNome } = body;
     const accountBody = { nome, email, senha, telefone, cep };
     const response = await ContaService.create(accountBody);
     await UserModel.create({
       id_conta: response.id_conta,
       sobreNome,
-      dataNascimento,
     });
     return await this.findOne({
       where: { id_conta: response.id_conta },

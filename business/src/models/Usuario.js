@@ -1,10 +1,11 @@
 const databaseConfig = require("../config/database");
 const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = new Sequelize(databaseConfig);
-const Conta = require('./Conta');
+const Conta = require("./Conta");
 
 const Usuario = sequelize.define(
-  "Usuario", {
+  "Usuario",
+  {
     id_usuario: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
@@ -19,12 +20,7 @@ const Usuario = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    dataNascimento: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
-  }
-  ,
+  },
   {
     tableName: "Usuario",
     timestamps: false,
@@ -32,11 +28,11 @@ const Usuario = sequelize.define(
 );
 
 Usuario.hasOne(Conta, {
-  foreignKey: 'id_conta',
-  as: "conta"
-})
+  foreignKey: "id_conta",
+  as: "conta",
+});
 Conta.hasOne(Usuario, {
-  foreignKey: 'id_conta',
-  as: "usuario"
-})
+  foreignKey: "id_conta",
+  as: "usuario",
+});
 module.exports = Usuario;
