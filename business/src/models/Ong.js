@@ -33,5 +33,9 @@ Ong.hasOne(Conta, {
   foreignKey: 'id_conta',
   as: "conta"
 })
+Conta.hasOne(Ong, {
+  foreignKey: 'id_conta',
+  as: 'ong'
+})
 
 module.exports = Ong;
