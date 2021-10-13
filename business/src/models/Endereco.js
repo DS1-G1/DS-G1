@@ -9,7 +9,7 @@ const Endereco = sequelize.define(
   "Endereco",
   {
     cep: {
-      type: DataTypes.STRING,
+      type: DataTypes.BIGINT,
       primaryKey: true,
       allowNull: false,
     },

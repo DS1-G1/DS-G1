@@ -42,7 +42,7 @@ module.exports = {
             allowNull: false,
           },
           cep: {
-            type: Sequelize.DataTypes.STRING,
+            type: Sequelize.DataTypes.BIGINT,
             allowNull: false,
             references: {
               model: "Endereco",
