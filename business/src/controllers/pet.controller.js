@@ -8,7 +8,7 @@ import { HttpException } from "../error/httpException";
 
 export default class PetController {
   static async create(req, res) {
-    const { nome, sexo, especie, porte, raca, dataNascimento, cep, id_conta } =
+    var { nome, sexo, especie, porte, raca, dataNascimento, cep, id_conta } =
       req.body;
 
     for (const [key, value] of Object.entries(req.body)) {
@@ -24,7 +24,9 @@ export default class PetController {
     if (!donoExists) {
       throw new HttpException(404, "Não existe Usuario ou Ong com está conta");
     }
-
+    if (!cep) {
+      cep = donoExists.cep;
+    }
     const localExists = await enderecoModel.findOne({
       where: { cep },
     });

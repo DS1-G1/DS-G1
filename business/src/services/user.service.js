@@ -22,7 +22,7 @@ export default class UserService {
             {
               model: UserModel,
               as: "usuario",
-              attributes: ["id_usuario", "sobreNome", "dataNascimento"],
+              attributes: ["id_usuario", "sobreNome"],
             },
           ],
         }
@@ -37,7 +37,7 @@ export default class UserService {
           {
             model: UserModel,
             as: "usuario",
-            attributes: ["id_usuario", "sobreNome", "dataNascimento"],
+            attributes: ["id_usuario", "sobreNome"],
           },
         ],
       })

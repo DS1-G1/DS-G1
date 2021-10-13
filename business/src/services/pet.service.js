@@ -1,5 +1,3 @@
-import Endereco from "../models/Endereco";
-import ContaService from "./conta.service";
 const EnderecoModel = require("../models/Endereco");
 const EstadoModel = require("../models/Estado");
 const ContaModel = require("../models/Conta");
