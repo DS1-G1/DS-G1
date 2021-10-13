@@ -6,20 +6,31 @@ import * as S from "./style"
 
 
 const ONGS = {
-    nome: "ONG do Zé",
-    pets: {
+    pets: [{
             nome: "Zé",
             categoria: "Cão",
             sexo: "Feminino",
             criado: "00/00/0000",
-    }
+            canil: "ONG do Zé"
+            },
+            {
+              nome: "Mane",
+              categoria: "Gato",
+              sexo: "maculino",
+              criado: "00/00/0000",
+              canil: "ONG do Mané"
+            }],
+
   }
 
 
 
+
+
 const AdminCanis = () => {
+  
   return (
-  <>
+    <>
 
     <Navbar/>
     <S.Conteiner> 
@@ -27,16 +38,27 @@ const AdminCanis = () => {
         <S.LabelButtons>
           Canis
         </S.LabelButtons>
-        <Buttom color="transparent" >Canil 1</Buttom>
-        <Buttom color="transparent" >Canil 2</Buttom>
-        <Buttom color="transparent" >Outros</Buttom>
+        { ONGS.pets.map( (pets) => <Buttom color="transparent" >{pets.canil }</Buttom>) }
       </S.ButtonsIndex>
 
     <S.ListConteiner>
       <S.LabelPainel>
         Painel Administrativo Canil
       </S.LabelPainel>
-      <S.ListPets>
+      { ONGS.pets.map( (pets) => 
+        <S.ListPets>
+          <S.LabelList>
+            <div>Nome: {pets.nome}</div>
+            <div>Categoria: {pets.categoria}</div>
+            <div>Sexo: {pets.sexo}</div>
+            <div>Criado: {pets.criado}</div>
+            <Buttom height="30px" >Editar</Buttom>
+            <Buttom height="30px" >Adotado</Buttom>
+          </S.LabelList>
+        </S.ListPets>) 
+      }
+
+      {/* <S.ListPets>
         <S.LabelList>
           <div>Nome: {ONGS.nome}</div>
           <div>Categoria: {ONGS.pets.nome}</div>
@@ -46,7 +68,7 @@ const AdminCanis = () => {
           <Buttom height="30px" >Editar</Buttom>
           <Buttom height="30px" >Adotado</Buttom>
         </S.LabelList>
-      </S.ListPets>
+      </S.ListPets> */}
     </S.ListConteiner>
     
     </S.Conteiner>
