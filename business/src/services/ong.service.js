@@ -29,7 +29,7 @@ export default class OngService {
       )
     );
   }
-  
+
   static async findOne(query = {}) {
     return await ContaModel.findOne(
       Object.assign(query, {
@@ -51,7 +51,7 @@ export default class OngService {
     await OngModel.create({
       id_conta: response.id_conta,
       cnpj,
-      descricao
+      descricao,
     });
     return await this.findOne({
       where: { id_conta: response.id_conta },

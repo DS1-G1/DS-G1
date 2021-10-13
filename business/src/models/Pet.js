@@ -39,20 +39,16 @@ const Pet = sequelize.define(
       allowNull: false,
     },
     cep: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: DataTypes.BIGINT,
       references: {
         model: Endereco,
         key: "cep",
       },
+      allowNull: false,
     },
     id_conta: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      references: {
-        model: Conta,
-        key: "id_conta",
-      },
     },
   },
   {

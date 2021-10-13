@@ -35,7 +35,11 @@ const Conta = sequelize.define(
       allowNull: false,
     },
     cep: {
-      type: Sequelize.DataTypes.STRING,
+      type: Sequelize.DataTypes.BIGINT,
+      references: {
+        model: Endereco,
+        key: "cep",
+      },
       allowNull: true,
     },
   },
