@@ -1,5 +1,6 @@
 const ContaModel = require("../models/Conta");
 const OngModel = require("../models/Ong");
+const EnderecoModel = require("../models/Endereco");
 import ContaService from "./conta.service";
 
 export default class OngService {
@@ -16,6 +17,7 @@ export default class OngService {
           where: {
             id_conta: ids,
           },
+          attributes: { exclude: ["cep"] },
         },
         {
           include: [
@@ -23,6 +25,10 @@ export default class OngService {
               model: OngModel,
               as: "ong",
               attributes: ["id_ong", "cnpj", "descricao"],
+            },
+            {
+              model: EnderecoModel,
+              as: "enderecoConta",
             },
           ],
         }
@@ -33,11 +39,16 @@ export default class OngService {
   static async findOne(query = {}) {
     return await ContaModel.findOne(
       Object.assign(query, {
+        attributes: { exclude: ["cep"] },
         include: [
           {
             model: OngModel,
             as: "ong",
             attributes: ["id_ong", "cnpj", "descricao"],
+          },
+          {
+            model: EnderecoModel,
+            as: "enderecoConta",
           },
         ],
       })

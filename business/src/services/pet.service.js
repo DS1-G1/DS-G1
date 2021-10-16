@@ -10,28 +10,25 @@ export default class PetService {
         include: [
           {
             model: ContaModel,
-            as: "conta",
+            as: "dono",
             attributes: ["nome", "email", "isAdmin", "telefone", "cep"],
+          },
+          {
+            model: EnderecoModel,
+            as: "endereco",
+            include: [
+              {
+                model: EstadoModel,
+                as: "estado",
+                attributes: ["sigla", "unidadeFederativa"],
+              },
+            ],
           },
         ],
       })
     );
-    const endereco = await EnderecoModel.findOne({
-      where: { cep: pet.cep },
-      attributes: ["bairro", "lagradouro", "complemento", "id_estado"],
-    });
-    const estado = await EstadoModel.findByPk(endereco.id_estado);
 
-    const enderecoEstado = {
-      endereco: {
-        ...endereco.dataValues,
-        ...estado.dataValues,
-      },
-    };
-    return {
-      ...pet.dataValues,
-      ...enderecoEstado,
-    };
+    return pet;
   }
   static async findAll(query = {}) {
     const pets = await PetModel.findAll(
@@ -41,8 +38,19 @@ export default class PetService {
         include: [
           {
             model: ContaModel,
-            as: "conta",
+            as: "dono",
             attributes: ["nome", "email", "isAdmin", "telefone", "cep"],
+          },
+          {
+            model: EnderecoModel,
+            as: "endereco",
+            include: [
+              {
+                model: EstadoModel,
+                as: "estado",
+                attributes: ["sigla", "unidadeFederativa"],
+              },
+            ],
           },
         ],
       })
