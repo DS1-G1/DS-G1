@@ -15,6 +15,12 @@ const Ong = sequelize.define(
     id_conta: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: "Conta",
+        key: "id_conta",
+      },
+      onDelete: "CASCADE",
+      onUpdate: "CASCADE",
     },
     cnpj: {
       type: DataTypes.STRING,
@@ -32,11 +38,16 @@ const Ong = sequelize.define(
 );
 Ong.hasOne(Conta, {
   foreignKey: "id_conta",
-  as: "conta",
+  sourceKey: 'id_conta',
+  onDelete: "CASCADE",
+  onUpdate: "CASCADE",
 });
 Conta.hasOne(Ong, {
   foreignKey: "id_conta",
-  as: "ong",
-});
+  sourceKey: 'id_conta',
+  as:'ong',
+  onDelete: "CASCADE",
+  onUpdate: "CASCADE",
+})
 
 module.exports = Ong;

@@ -15,6 +15,12 @@ const Usuario = sequelize.define(
     id_conta: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: "Conta",
+        key: "id_conta",
+      },
+      onUpdate: "CASCADE",
+      onDelete: "CASCADE",
     },
     sobreNome: {
       type: DataTypes.STRING,
@@ -29,10 +35,16 @@ const Usuario = sequelize.define(
 
 Usuario.hasOne(Conta, {
   foreignKey: "id_conta",
-  as: "conta",
+  sourceKey: "id_conta",
+  onUpdate: "CASCADE",
+  onDelete: "CASCADE",
 });
 Conta.hasOne(Usuario, {
   foreignKey: "id_conta",
+  sourceKey: "id_conta",
   as: "usuario",
+  onDelete: "CASCADE",
+  onUpdate: "CASCADE",
 });
+
 module.exports = Usuario;

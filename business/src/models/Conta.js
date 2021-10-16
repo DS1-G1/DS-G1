@@ -36,11 +36,13 @@ const Conta = sequelize.define(
     },
     cep: {
       type: Sequelize.DataTypes.BIGINT,
+      allowNull: true,
       references: {
-        model: Endereco,
+        model: "Endereco",
         key: "cep",
       },
-      allowNull: true,
+      onUpdate: "RESTRICT",
+      onDelete: "RESTRICT",
     },
   },
   {
@@ -50,20 +52,31 @@ const Conta = sequelize.define(
 );
 
 Conta.hasOne(Endereco, {
+  sourceKey: 'cep',
+  as:'enderecoConta',
   foreignKey: "cep",
-  as: "endereco",
+  onDelete: "RESTRICT",
+  onUpdate: "RESTRICT",
 });
 Endereco.hasMany(Conta, {
   foreignKey: "cep",
-  as: "conta",
+  sourceKey: 'cep',
+  onDelete: "SET NULL",
+  onUpdate: "SET NULL",
+});
+Pet.hasOne(Conta, {
+  foreignKey: "id_conta",
+  sourceKey: 'id_conta',
+  as: 'dono',
+  onDelete: 'CASCADE',
+  onUpdate:'CASCADE'
 });
 Conta.hasMany(Pet, {
+  sourceKey: 'id_conta',
+  as:'pet',
   foreignKey: "id_conta",
-  as: "pet",
-});
-Pet.belongsTo(Conta, {
-  foreignKey: "id_conta",
-  as: "conta",
+  onDelete: "CASCADE",
+  onUpdate: "CASCADE",
 });
 
 module.exports = Conta;

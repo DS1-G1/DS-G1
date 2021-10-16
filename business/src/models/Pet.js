@@ -40,15 +40,23 @@ const Pet = sequelize.define(
     },
     cep: {
       type: DataTypes.BIGINT,
+      allowNull: false,
       references: {
-        model: Endereco,
+        model: "Endereco",
         key: "cep",
       },
-      allowNull: false,
+      onDelete: "RESTRICT",
+      onUpdate: "RESTRICT",
     },
     id_conta: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'Conta',
+        key: "id_conta",
+      },
+      onDelete: "CASCADE",
+      onUpdate: "CASCADE",
     },
   },
   {
@@ -56,5 +64,7 @@ const Pet = sequelize.define(
     timestamps: false,
   }
 );
+
+
 
 module.exports = Pet;
