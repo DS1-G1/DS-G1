@@ -1,7 +1,5 @@
 import "dotenv/config";
-import { hash } from "bcrypt";
 import petService from "../services/pet.service";
-import userService from "../services/user.service";
 import contaService from "../services/conta.service";
 import enderecoModel from "../models/Endereco";
 import { HttpException } from "../error/httpException";
@@ -79,6 +77,31 @@ export default class PetController {
 
   static async listAll(req, res) {
     const petsFound = await petService.findAll();
+    res.send(petsFound);
+  }
+  static async listAllByFilter(req, res) {
+    let page = req.body.page || 1;
+    let limit = req.body.rowsPerPage;
+    let offset = limit * (page - 1);
+
+    const { id_estado, especie, sexo, idade } = req.body;
+    let query = {},
+      queryEstado = {},
+      queryIdade = {};
+
+    especie && (query.especie = especie);
+    sexo && (query.sexo = sexo);
+    idade && (queryIdade.idade = new Date(Date.now()).getFullYear() - idade);
+
+    id_estado && (queryEstado.id_estado = id_estado);
+
+    const petsFound = await petService.findAllFilter({
+      where: query,
+      queryIdade,
+      queryEstado,
+      offset,
+      limit,
+    });
     res.send(petsFound);
   }
 
