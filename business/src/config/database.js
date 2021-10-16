@@ -10,7 +10,7 @@ if (process.env.ENVIROMENT === "dev") {
     password: process.env.POSTGRES_PASSWORD,
     database: process.env.POSTGRES_DB,
     define: {
-      timestamps: true,
+      timestamps: false,
     },
   };
 } 
