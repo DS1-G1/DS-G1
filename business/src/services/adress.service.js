@@ -1,18 +1,18 @@
 const adressModel = require("../models/Endereco");
 
-export default class ContaService {
+export default class AdressService {
   static async findOne(query = {}) {
     return await adressModel.findOne(query);
   }
   static async create(body) {
     return await adressModel.create(body);
   }
-  static async update(idConta, body) {
+  static async update(cep, body) {
     return await adressModel.update(body, {
-      where: { id_conta: idConta },
+      where: { cep: cep },
     });
   }
-  static async delete(idConta) {
-    return await adressModel.destroy({ where: { id_conta: idConta } });
+  static async delete(cep) {
+    return await adressModel.destroy({ where: { cep: cep } });
   }
 }
