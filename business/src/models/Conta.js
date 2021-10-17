@@ -1,10 +1,12 @@
 const databaseConfig = require("../config/database");
 const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = new Sequelize(databaseConfig);
-const Endereco = require('./Endereco');
+const Endereco = require("./Endereco");
+const Pet = require("./Pet");
 
 const Conta = sequelize.define(
-  "Conta", {
+  "Conta",
+  {
     id_conta: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
@@ -22,19 +24,25 @@ const Conta = sequelize.define(
     senha: {
       type: DataTypes.STRING,
       allowNull: false,
-    }, 
+    },
     isAdmin: {
       type: Sequelize.DataTypes.BOOLEAN,
       allowNull: false,
-      defaultValue: false
+      defaultValue: false,
     },
     telefone: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     cep: {
-      type: Sequelize.DataTypes.STRING,
+      type: Sequelize.DataTypes.BIGINT,
       allowNull: true,
+      references: {
+        model: "Endereco",
+        key: "cep",
+      },
+      onUpdate: "RESTRICT",
+      onDelete: "RESTRICT",
     },
   },
   {
@@ -44,8 +52,31 @@ const Conta = sequelize.define(
 );
 
 Conta.hasOne(Endereco, {
-  foreignKey: 'cep',
-  as:"endereco"
-})
+  sourceKey: 'cep',
+  as:'enderecoConta',
+  foreignKey: "cep",
+  onDelete: "RESTRICT",
+  onUpdate: "RESTRICT",
+});
+Endereco.hasMany(Conta, {
+  foreignKey: "cep",
+  sourceKey: 'cep',
+  onDelete: "SET NULL",
+  onUpdate: "SET NULL",
+});
+Pet.hasOne(Conta, {
+  foreignKey: "id_conta",
+  sourceKey: 'id_conta',
+  as: 'dono',
+  onDelete: 'CASCADE',
+  onUpdate:'CASCADE'
+});
+Conta.hasMany(Pet, {
+  sourceKey: 'id_conta',
+  as:'pet',
+  foreignKey: "id_conta",
+  onDelete: "CASCADE",
+  onUpdate: "CASCADE",
+});
 
 module.exports = Conta;

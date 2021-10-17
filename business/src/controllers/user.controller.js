@@ -6,8 +6,7 @@ import { HttpException } from "../error/httpException";
 
 export default class UserController {
   static async create(req, res) {
-    const { nome, email, senha, telefone, cep, sobreNome, dataNascimento } =
-      req.body;
+    const { nome, email, senha, telefone, cep, sobreNome } = req.body;
 
     for (const [key, value] of Object.entries(req.body)) {
       if (!value) {
@@ -32,7 +31,6 @@ export default class UserController {
       telefone,
       cep,
       sobreNome,
-      dataNascimento,
     });
     res.send(user);
   }
@@ -48,7 +46,6 @@ export default class UserController {
       "telefone",
       "cep",
       "sobreNome",
-      "dataNascimento",
     ];
     for (const [key, value] of Object.entries(req.body)) {
       if (!value) {
@@ -78,7 +75,6 @@ export default class UserController {
         parseInt(process.env.SECRET_SALT)
       );
     }
-    console.log(bodyUpdate);
     const user = await userService.updateUser(id_conta, bodyUpdate);
     res.send(user);
   }

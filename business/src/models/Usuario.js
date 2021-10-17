@@ -1,10 +1,11 @@
 const databaseConfig = require("../config/database");
 const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = new Sequelize(databaseConfig);
-const Conta = require('./Conta');
+const Conta = require("./Conta");
 
 const Usuario = sequelize.define(
-  "Usuario", {
+  "Usuario",
+  {
     id_usuario: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
@@ -14,17 +15,18 @@ const Usuario = sequelize.define(
     id_conta: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: "Conta",
+        key: "id_conta",
+      },
+      onUpdate: "CASCADE",
+      onDelete: "CASCADE",
     },
     sobreNome: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    dataNascimento: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
-  }
-  ,
+  },
   {
     tableName: "Usuario",
     timestamps: false,
@@ -32,11 +34,17 @@ const Usuario = sequelize.define(
 );
 
 Usuario.hasOne(Conta, {
-  foreignKey: 'id_conta',
-  as: "conta"
-})
+  foreignKey: "id_conta",
+  sourceKey: "id_conta",
+  onUpdate: "CASCADE",
+  onDelete: "CASCADE",
+});
 Conta.hasOne(Usuario, {
-  foreignKey: 'id_conta',
-  as: "usuario"
-})
+  foreignKey: "id_conta",
+  sourceKey: "id_conta",
+  as: "usuario",
+  onDelete: "CASCADE",
+  onUpdate: "CASCADE",
+});
+
 module.exports = Usuario;

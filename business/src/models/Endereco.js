@@ -2,14 +2,16 @@ const databaseConfig = require("../config/database");
 const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = new Sequelize(databaseConfig);
 const Estado = require("./Estado");
+const Pet = require("./Pet");
 
 const Endereco = sequelize.define(
   "Endereco",
   {
     cep: {
-      type: DataTypes.STRING,
+      type: DataTypes.BIGINT,
       primaryKey: true,
       allowNull: false,
+      unique: true
     },
     lagradouro: {
       type: DataTypes.STRING,
@@ -26,7 +28,13 @@ const Endereco = sequelize.define(
     id_estado: {
       type: DataTypes.INTEGER,
       allowNull: false,
-    }
+      references: {
+        model: "Estado",
+        key: "id_estado",
+      },
+      onDelete: "RESTRICT",
+      onUpdate: "RESTRICT",
+    },
   },
   {
     tableName: "Endereco",
@@ -35,9 +43,22 @@ const Endereco = sequelize.define(
 );
 
 Endereco.hasOne(Estado, {
-  foreignKey: 'id_estado',
-  as: 'estado'
-})
+  foreignKey: "id_estado",
+  sourceKey: 'id_estado',
+  onDelete: "RESTRICT",
+  onUpdate: "RESTRICT",
+  as:"estado",
+});
+Pet.hasOne(Endereco, {
+  as:'endereco',
+  foreignKey: "cep",
+  sourceKey: 'cep',
+});
+Endereco.hasMany(Pet, {
+  foreignKey: "cep",
+  sourceKey: 'cep',
+  as:'pets'
+});
 
 
 module.exports = Endereco;

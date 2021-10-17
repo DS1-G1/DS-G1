@@ -1,4 +1,4 @@
-import configApp from './configExpress';
+import configApp from "./configExpress";
 const app = configApp();
 const port = 3030;
 
