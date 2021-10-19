@@ -9,6 +9,7 @@ import logo from "../img/logo.png"
 import iconFacebook from "../img/iconFacebook.png"
 import iconTwitter from "../img/iconTwitter.png"
 import iconInstagram from "../img/iconInstagram.png"
+import popUp from "../components/popUp";
 
 
 function Home () {
@@ -98,7 +99,7 @@ function Home () {
         </div>
           
       </div>
-
+    <popUp/>
     </div>
   )
 }
