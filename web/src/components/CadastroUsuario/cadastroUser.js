@@ -74,7 +74,7 @@ const TelaCadastroUser = () => {
           <div className="alignIcon">
             <input placeholder="Confirme sua senha" type="password" className="inputLogin marginInput"></input>
             <dev className="signUpButton">
-              <ButtonBlue type="submit">Confirmar Cadastro</ButtonBlue>
+              <ButtonBlue type="submit" width="260px" height="48px">Confirmar Cadastro</ButtonBlue>
             </dev>
           </div>
           
