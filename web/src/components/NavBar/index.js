@@ -13,7 +13,7 @@ const Navbar = () => {
       <ul className="nav-menu">
         {navBarItens.map((item, index) => {
           return (
-            <li>
+            <li key={index}>
               <a className={item.className} href={item.url}>
                 {item.title}
               </a>
