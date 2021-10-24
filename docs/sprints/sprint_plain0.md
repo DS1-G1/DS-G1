@@ -41,4 +41,4 @@ Data de término da Sprint: 26/07/2021
 
 | Data | Versão | Descrição | Autor(es) |
 |:----:|:------:|:---------:|:---------:|
-|09/06/2021|1.0|Adiciona planning da sprint 0 |[Heitor Marques](https://github.com/heitormsb)|
+|20/07/2021|1.0|Adiciona planning da sprint 0 |[Heitor Marques](https://github.com/heitormsb)|
