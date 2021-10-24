@@ -3,21 +3,35 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type":"module",
+  "license": "MIT",
+  "author": "Carlos Rafael <carlosoftwar@gmail.com>",
   "scripts": {
-    "start": "nodemon --exec sucrase-node ./src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "sequelize db:migrate && nodemon --exec sucrase-node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "orm:create": "sequelize migration:create --name",
+    "orm:run": "sequelize db:migrate",
+    "orm:revert": "sequelize db:migrate:undo",
+    "orm:revertAll": "sequelize db:migrate:undo:all",
+    "orm:runAll": "sequelize db:migrate && sequelize db:seed:all",
+    "seed:create": "sequelize seed:generate --name",
+    "seed:run": "sequelize db:seed:all",
+    "seed:revert": "sequelize db:seed:undo",
+    "seed:revertAll": "sequelize db:seed:undo:all"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "axios": "^0.21.4",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pg": "^8.7.1",
+    "sequelize": "^6.6.5"
   },
   "devDependencies": {
+    "dotenv": "^10.0.0",
     "eslint": "^7.32.0",
     "express-async-errors": "^3.1.1",
     "nodemon": "^2.0.12",
+    "sequelize-cli": "^6.2.0",
     "sucrase": "^3.20.1"
   }
 }

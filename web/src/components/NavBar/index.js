@@ -22,7 +22,7 @@ const Navbar = () => {
         })}
         <li>
           <a href="/login">
-            <ButtonBlue>Login</ButtonBlue>
+            <ButtonBlue hover="#000">Login</ButtonBlue>
           </a>
         </li>
       </ul>
