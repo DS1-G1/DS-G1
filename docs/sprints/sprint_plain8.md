@@ -42,4 +42,4 @@ Data de término da Sprint: 11/10/2021
 
 | Data | Versão | Descrição | Autor(es) |
 |:----:|:------:|:---------:|:---------:|
-04/10/2021|1.0|Adiciona planning da sprint 5 |[Heitor Marques](https://github.com/heitormsb) e [Lucas Soares Barros](https://github.com/lucaaassb)|
+04/10/2021|1.0|Adiciona planning da sprint 8 |[Heitor Marques](https://github.com/heitormsb) e [Lucas Soares Barros](https://github.com/lucaaassb)|
