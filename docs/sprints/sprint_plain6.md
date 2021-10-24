@@ -2,9 +2,9 @@
 
 # Sprint 6 - Planning 
 
-Data: 13/09/2021
+Data: 20/09/2021
 
-Data de início da Sprint: 20 /09/2021
+Data de início da Sprint: 20/09/2021
 Data de término da Sprint: 27/09/2021
 
 ## Resumo
