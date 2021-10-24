@@ -55,7 +55,7 @@ const popUp = ({ dataprops, setTrigger, trigger }) => {
 
           <ButtonBlue
             width="150px"
-            height="60px"
+            height="50px"
             key={dataprops.id}
             
           > Adotar </ButtonBlue>

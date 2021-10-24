@@ -60,6 +60,7 @@ grid-template-columns: 1fr 1fr 1fr;
 `
 
 export const Butpms = styled.div` 
+margin-left: 20px;
 width: 100%;
 display: flex;
 justify-content: space-between;
