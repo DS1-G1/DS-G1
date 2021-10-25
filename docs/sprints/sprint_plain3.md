@@ -3,7 +3,7 @@
 Data: 30/08/2021
 
 Data de início da Sprint: 30/08/2021
-Data de término da Sprint: 06/08/2021
+Data de término da Sprint: 06/09/2021
 
 ## Resumo
 
