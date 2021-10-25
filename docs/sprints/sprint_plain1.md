@@ -13,7 +13,7 @@ Data de término da Sprint: 09/08/2021
     - nodeJS
     - Firebase
 
-- Difinição dos product backlogs
+- Definição dos product backlogs
 
 
 ## Atividades Alocadas para a Sprint
