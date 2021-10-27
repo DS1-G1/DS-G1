@@ -41,8 +41,7 @@
 
 .alignIcon {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
 .marginInput {
@@ -58,7 +57,9 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
+.error {
+  color: red;
+}
 .inputLogin::placeholder {
   font-size: 15px;
 }

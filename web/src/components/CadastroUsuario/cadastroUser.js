@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { useFormik } from "formik";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import ButtonBlue from "../buttonBlue";
 import { userService } from "../../service";
 import "./cadastroUser.css";
 
-const SignupSchema = Yup.object().shape({
+const SignupSchema = Yup.object({
   nome: Yup.string()
     .min(2, "Nome muito pequeno!")
     .max(50, "Nome muito longo!")
@@ -15,10 +16,6 @@ const SignupSchema = Yup.object().shape({
     .max(100, "muito longo!")
     .required("Required"),
   celular: Yup.string()
-    .min(8, "muito pequeno!")
-    .max(20, "muito longo!")
-    .required("Required"),
-  cep: Yup.string()
     .min(8, "muito pequeno!")
     .max(20, "muito longo!")
     .required("Required"),
@@ -35,46 +32,32 @@ const SignupSchema = Yup.object().shape({
     "senhas não coincidem"
   ),
   email: Yup.string().email("Invalid email").required("Required"),
-});
+}).required();
 
 const TelaCadastroUser = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm({
+    resolver: yupResolver(SignupSchema),
+  });
   const [checkedAdopt, setCheckedAdopt] = useState(false);
   const [checkedDivulgar, setCheckedDivulgar] = useState(false);
   const [tipo, setTipo] = useState("");
 
+  const onSubmit = async (data) => {
+    console.log(data);
+    await userService.create(data);
+    reset();
+  };
+  const onError = (errors, e) => console.log(errors, e);
+
   const handleTipo = (value) => {
     setTipo(value.target.value);
   };
-  const createUser = async (body) => {
-    const { nome, email, senha, celular, cep, sobrenome } = body;
-    await userService.create({
-      nome,
-      email,
-      senha,
-      telefone: celular,
-      //cep,
-      sobreNome: sobrenome,
-    });
-  };
 
-  const formik = useFormik({
-    initialValues: {
-      nome: "",
-      sobrenome: "",
-      email: "",
-      celular: "",
-      cep: "",
-      cpf: "",
-      senha: "",
-      confirmSenha: "",
-    },
-    enableReinitialize: true,
-    //validationSchema: SignupSchema,
-    onSubmit: (values) => {
-      console.log(values);
-      createUser(values);
-    },
-  });
   const handleChangeAdopt = () => {
     setCheckedAdopt(!checkedAdopt);
   };
@@ -99,7 +82,7 @@ const TelaCadastroUser = () => {
               value={checkedAdopt}
               onChange={handleChangeAdopt}
             />
-            <label>Quero adotar um Pet</label>
+            <label> Quero adotar um Pet</label>
           </div>
 
           <div>
@@ -109,7 +92,7 @@ const TelaCadastroUser = () => {
               value={checkedDivulgar}
               onChange={handleChangeDivulgar}
             />
-            <label>Quero divulgar para adoção</label>
+            <label> Quero divulgar para adoção</label>
           </div>
 
           <div>
@@ -135,7 +118,10 @@ const TelaCadastroUser = () => {
           </div>
         </div>
 
-        <form className="signUpformContainer" onSubmit={formik.handleSubmit}>
+        <form
+          className="signUpformContainer"
+          onSubmit={handleSubmit(onSubmit, onError)}
+        >
           <div className="alignIcon">
             <input
               placeholder={
@@ -143,77 +129,66 @@ const TelaCadastroUser = () => {
                   ? "Digite seu nome"
                   : "Nome da ONG"
               }
-              type="text"
-              className="inputLogin marginInput"
-              value={formik.values.nome}
-              onChange={formik.handleChange("nome")}
+              {...register("nome")}
+              className="inputLogin"
             ></input>
-            {/* {formik.touched.nome ? formik.errors.nome : SignupSchema} */}
+            <p className="error">{errors.nome?.message}</p>
             <input
               placeholder={
                 tipo === "" || tipo === "user"
                   ? "Digite seu sobrenome"
                   : "Dê uma descricao"
               }
-              type="text"
               className="inputLogin"
-              value={formik.values.sobrenome}
-              onChange={formik.handleChange("sobrenome")}
+              {...register("sobrenome")}
             ></input>
+            <p className="error">
+              {tipo === "user" ? errors.sobrenome?.message : null}
+            </p>
           </div>
 
           <div className="alignIcon">
             <input
               placeholder="Digite seu email"
-              type="email"
-              className="inputLogin marginInput"
-              value={formik.values.email}
-              onChange={formik.handleChange("email")}
+              className="inputLogin"
+              {...register("email")}
             ></input>
+            <p className="error">{errors.email?.message}</p>
             <input
               placeholder="Celular"
-              type="tel"
               className="inputLogin"
-              value={formik.values.celular}
-              onChange={formik.handleChange("celular")}
+              {...register("celular")}
             ></input>
-          </div>
-
-          <div className="alignIcon">
-            <input
-              placeholder="CEP"
-              type="text"
-              className="inputLogin"
-              value={formik.values.cep}
-              onChange={formik.handleChange("cep")}
-            ></input>
-            <input
-              placeholder={tipo === "" || tipo === "user" ? "CPF" : "CNPJ"}
-              type="text"
-              className="inputLogin"
-              value={formik.values.cpf}
-              onChange={formik.handleChange("cpf")}
-            ></input>
+            <p className="error">{errors.celular?.message}</p>
           </div>
           <div className="alignIcon">
             <input
               placeholder="Senha"
               type="password"
               className="inputLogin"
-              value={formik.values.senha}
-              onChange={formik.handleChange("senha")}
+              {...register("senha")}
             ></input>
+            <p className="error">{errors.senha?.message}</p>
             <input
               placeholder="Confirme sua senha"
               type="password"
               className="inputLogin"
-              value={formik.values.confirmSenha}
-              onChange={formik.handleChange("confirmSenha")}
+              {...register("confirmSenha")}
             ></input>
+            <p className="error">{errors.confirmSenha?.message}</p>
+          </div>
+          <div className="alignIcon">
+            <input
+              placeholder={tipo === "" || tipo === "user" ? "CPF" : "CNPJ"}
+              type="text"
+              className="inputLogin"
+              {...register("cpf")}
+            ></input>
+            <p className="error">{errors.cpf?.message}</p>
           </div>
           <dev className="signUpButton">
             <ButtonBlue type="submit" width="260px" height="48px">
-              Confirmar Cadastro
+              {isSubmitting ? "Carregando..." : "Cadastrar"}
             </ButtonBlue>
           </dev>
         </form>
