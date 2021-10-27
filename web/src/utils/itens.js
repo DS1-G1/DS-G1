@@ -5,8 +5,8 @@ const navBarItens = [
     className: "nav-links",
   },
   {
-    title: "Sobre",
-    url: "/about",
+    title: "Cadastrar Pet",
+    url: "/signUpPet",
     className: "nav-links",
   },
   {
