@@ -1,10 +1,10 @@
-.containerLogin{
+.containerLogin {
   display: grid;
   height: 92.1vh;
   grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
 }
 
-.splitLeft{
+.splitLeft {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,43 +12,43 @@
   /* background: white; */
 }
 
-.cadastroLabel{
+.cadastroLabel {
   font-size: 40px;
   font-weight: bold;
 }
 
-#motivoDoacao{
+#motivoDoacao {
   padding: 2px 5px;
   width: 150px;
 }
 
-.checkboxCadastro{
+.checkboxCadastro {
   margin-top: 25px;
   margin-bottom: 25px;
   margin-left: -280px;
 }
 
-.signUpformContainer{
+.signUpformContainer {
   display: flex;
   flex-direction: column;
 }
 
-.labelsInput{
+.labelsInput {
   font-weight: bold;
   margin-left: 65px;
   margin-bottom: 5px;
 }
 
-.alignIcon{
+.alignIcon {
   display: flex;
-  align-items: center;
+  flex-direction: column;
 }
 
-.marginInput{
+.marginInput {
   margin-right: 20px;
 }
 
-.inputLogin{
+.inputLogin {
   width: 260px;
   height: 48px;
   border: 1px solid #989494;
@@ -57,24 +57,26 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
-.inputLogin::placeholder{
+.error {
+  color: red;
+}
+.inputLogin::placeholder {
   font-size: 15px;
 }
 
-.centerlabel{
+.centerlabel {
   /* margin-left: 40px; */
   text-align: center;
 }
 
-.signUpButton{
+.signUpButton {
   /* margin-top: 20px; */
   width: 190px;
   height: 58px;
   /* margin-left: 45%; */
 }
 
-.splitRight{
+.splitRight {
   margin-left: -11px;
   background-size: cover;
   background-position: center;
