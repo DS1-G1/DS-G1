@@ -41,25 +41,9 @@ module.exports = {
             type: Sequelize.DataTypes.DATE,
             allowNull: false,
           },
-          cep: {
-            type: Sequelize.DataTypes.BIGINT,
-            allowNull: false,
-            references: {
-              model: "Endereco",
-              key: "cep",
-            },
-            onUpdate: "RESTRICT",
-            onDelete: "RESTRICT",
-          },
-          id_conta: {
-            type: Sequelize.DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-              model: "Conta",
-              key: "id_conta",
-            },
-            onUpdate: "CASCADE",
-            onDelete: "CASCADE",
+          descricao: {
+            type: Sequelize.DataTypes.STRING,
+            allowNull: true,
           },
         },
         { transaction }

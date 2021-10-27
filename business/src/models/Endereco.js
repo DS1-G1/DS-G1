@@ -11,7 +11,7 @@ const Endereco = sequelize.define(
       type: DataTypes.BIGINT,
       primaryKey: true,
       allowNull: false,
-      unique: true
+      unique: true,
     },
     lagradouro: {
       type: DataTypes.STRING,
@@ -44,21 +44,10 @@ const Endereco = sequelize.define(
 
 Endereco.hasOne(Estado, {
   foreignKey: "id_estado",
-  sourceKey: 'id_estado',
+  sourceKey: "id_estado",
   onDelete: "RESTRICT",
   onUpdate: "RESTRICT",
-  as:"estado",
+  as: "estado",
 });
-Pet.hasOne(Endereco, {
-  as:'endereco',
-  foreignKey: "cep",
-  sourceKey: 'cep',
-});
-Endereco.hasMany(Pet, {
-  foreignKey: "cep",
-  sourceKey: 'cep',
-  as:'pets'
-});
-
 
 module.exports = Endereco;

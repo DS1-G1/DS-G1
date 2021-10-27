@@ -1,8 +1,6 @@
 const databaseConfig = require("../config/database");
 const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = new Sequelize(databaseConfig);
-const Conta = require("./Conta");
-const Endereco = require("./Endereco");
 
 const Pet = sequelize.define(
   "Pet",
@@ -38,25 +36,13 @@ const Pet = sequelize.define(
       type: DataTypes.DATE,
       allowNull: false,
     },
-    cep: {
-      type: DataTypes.BIGINT,
-      allowNull: false,
-      references: {
-        model: "Endereco",
-        key: "cep",
-      },
-      onDelete: "RESTRICT",
-      onUpdate: "RESTRICT",
+    descricao: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
-    id_conta: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'Conta',
-        key: "id_conta",
-      },
-      onDelete: "CASCADE",
-      onUpdate: "CASCADE",
+    localizacao: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
   },
   {
@@ -64,7 +50,5 @@ const Pet = sequelize.define(
     timestamps: false,
   }
 );
-
-
 
 module.exports = Pet;

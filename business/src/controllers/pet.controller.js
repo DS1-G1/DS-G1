@@ -6,31 +6,21 @@ import { HttpException } from "../error/httpException";
 
 export default class PetController {
   static async create(req, res) {
-    var { nome, sexo, especie, porte, raca, dataNascimento, cep, id_conta } =
-      req.body;
-
+    var {
+      nome,
+      sexo,
+      especie,
+      porte,
+      raca,
+      dataNascimento,
+      descricao,
+      localizacao,
+    } = req.body;
+    console.log(req.body);
     for (const [key, value] of Object.entries(req.body)) {
       if (!value) {
         throw new HttpException(400, `Campo inválido - ${key}: ${value}`);
       }
-    }
-
-    const donoExists = await contaService.findOne({
-      where: { id_conta },
-    });
-
-    if (!donoExists) {
-      throw new HttpException(404, "Não existe Usuario ou Ong com está conta");
-    }
-    if (!cep) {
-      cep = donoExists.cep;
-    }
-    const localExists = await enderecoModel.findOne({
-      where: { cep },
-    });
-
-    if (!localExists) {
-      throw new HttpException(404, "Não existe este local na nossa base");
     }
 
     const pet = await petService.createPet({
@@ -40,8 +30,8 @@ export default class PetController {
       porte,
       raca,
       dataNascimento,
-      cep: parseInt(cep),
-      id_conta,
+      descricao,
+      localizacao,
     });
     res.send(pet);
   }
@@ -49,7 +39,14 @@ export default class PetController {
   static async updatePet(req, res) {
     const { id_pet } = req.params;
     const bodyUpdate = {};
-    const fieldsRestrict = ["especie", "nome", "sexo", "porte", "raca", "cep"];
+    const fieldsRestrict = [
+      "especie",
+      "nome",
+      "sexo",
+      "porte",
+      "raca",
+      "descricao",
+    ];
     for (const [key, value] of Object.entries(req.body)) {
       if (!value) {
         throw new HttpException(400, `Campo inválido - ${key}: ${value}`);

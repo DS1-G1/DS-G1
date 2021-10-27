@@ -52,31 +52,17 @@ const Conta = sequelize.define(
 );
 
 Conta.hasOne(Endereco, {
-  sourceKey: 'cep',
-  as:'enderecoConta',
+  sourceKey: "cep",
+  as: "enderecoConta",
   foreignKey: "cep",
   onDelete: "RESTRICT",
   onUpdate: "RESTRICT",
 });
 Endereco.hasMany(Conta, {
   foreignKey: "cep",
-  sourceKey: 'cep',
+  sourceKey: "cep",
   onDelete: "SET NULL",
   onUpdate: "SET NULL",
-});
-Pet.hasOne(Conta, {
-  foreignKey: "id_conta",
-  sourceKey: 'id_conta',
-  as: 'dono',
-  onDelete: 'CASCADE',
-  onUpdate:'CASCADE'
-});
-Conta.hasMany(Pet, {
-  sourceKey: 'id_conta',
-  as:'pet',
-  foreignKey: "id_conta",
-  onDelete: "CASCADE",
-  onUpdate: "CASCADE",
 });
 
 module.exports = Conta;
