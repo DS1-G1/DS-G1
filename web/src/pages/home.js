@@ -10,6 +10,7 @@ import imgCrop3 from "../img/imgCrop3.png"
 import Footer from "../components/Footer";
 
 
+
 function Home () {
   return(
     <div>
@@ -64,13 +65,12 @@ function Home () {
             </div>
           </div>
           
-          
-
         </div>
 
-
       </div>
+
       <Footer/>
+
     </div>
   )
 }
