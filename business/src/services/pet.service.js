@@ -35,24 +35,6 @@ export default class PetService {
       Object.assign(query, {
         raw: true,
         nest: true,
-        include: [
-          {
-            model: ContaModel,
-            as: "dono",
-            attributes: ["nome", "email", "isAdmin", "telefone", "cep"],
-          },
-          {
-            model: EnderecoModel,
-            as: "endereco",
-            include: [
-              {
-                model: EstadoModel,
-                as: "estado",
-                attributes: ["sigla", "unidadeFederativa"],
-              },
-            ],
-          },
-        ],
       })
     );
 
