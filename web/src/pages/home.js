@@ -5,16 +5,16 @@ import ButtonBlue from "../components/buttonBlue";
 import imgCrop1 from "../img/imgCrop1.png"
 import imgCrop2 from "../img/imgCrop2.png"
 import imgCrop3 from "../img/imgCrop3.png"
-import logo from "../img/logo.png"
-import iconFacebook from "../img/iconFacebook.png"
-import iconTwitter from "../img/iconTwitter.png"
-import iconInstagram from "../img/iconInstagram.png"
+
+
+import Footer from "../components/Footer";
+
 
 
 function Home () {
   return(
     <div>
-      <Navbar></Navbar>
+      <Navbar/>
       <div className="headerContainer">
         <div className="headerContain">
           <label className="headerLabel">Ja adotou hoje?</label>
@@ -65,39 +65,11 @@ function Home () {
             </div>
           </div>
           
-          
-
         </div>
-
 
       </div>
 
-      <div className="footer containerF">
-        <div>
-          <img src={logo} alt="imgCrop2" />
-        </div>
-        <div className="sobreSite">
-          <li><a href={"/#"}>Serviços</a></li>
-          <li><a href={"/#"}>Adoção</a></li>
-          <li><a href={"/#"}>Contato do site</a></li>
-        </div>
-        <div className="redesSociais">
-          <li>Siga a gente:</li>
-          <li>
-            <img src={iconFacebook} alt="iconFacebook" className="iconFooter"/>
-            <a href="/#">Facebook</a>
-          </li>
-          <li>
-          <img src={iconTwitter} alt="iconTwitter" className="iconFooter"/>
-            <a href="/#">Twitter</a>
-            </li>
-          <li>
-          <img src={iconInstagram} alt="iconInstagram" className="iconFooter"/>
-            <a href="/#">Instagram</a>
-            </li>
-        </div>
-          
-      </div>
+      <Footer/>
 
     </div>
   )
