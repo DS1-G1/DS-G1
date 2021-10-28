@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 
 export const Container = styled.div` 
-  position: relative;
+  // position: relative;
   background-color: #ffffff;
   border-radius: 25px;
   width: 280px;
@@ -17,14 +17,14 @@ export const ImgContainer = styled.img`
 ` 
 
 export const PetInfo = styled.div`
-  position: relative;
+  // position: relative;
   display: flex;
   margin-left: 20px;
   margin-top: 5px;
   height: 100px;
 ` 
 export const InfoDiv = styled.div`
-  width = 100px;
+  width = 200px;
 `
 
 export const PetName = styled.div`
@@ -37,7 +37,7 @@ export const ONGName = styled.div`
   font-size: 15px;
   color: #546DE5;
   margin-bottom: 15px;
-  `
+`
 
   export const Location = styled.div`
   display: flex;
@@ -47,7 +47,7 @@ export const ONGName = styled.div`
 
 export const IconSex = styled.div`
   display: flex;
-  position: absolute;
-  margin-left: 205px;
+  // position: absolute;
+  margin-left: 105px;
   font-size: 40px;
 `

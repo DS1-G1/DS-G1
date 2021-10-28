@@ -5,7 +5,7 @@ import { BiFemaleSign } from "react-icons/bi"
 import { IoMdMale } from "react-icons/io"
 
 const popUp = ({ dataprops, setTrigger, trigger }) => {
-
+  // console.log(dataprops.sexo)
   return (trigger) ? (
 
     <S.Conteiner  onClick={() => setTrigger(false)}>
@@ -14,7 +14,7 @@ const popUp = ({ dataprops, setTrigger, trigger }) => {
         <S.Dados>
           <S.Toppo>
             <h1>{dataprops.petname}</h1>
-            {dataprops.sexo === "M" ? <IoMdMale color="##63CDDA" size={40} /> : <BiFemaleSign color="#F854CD" size={40} />}
+            {dataprops.sexo === "Macho" ? <IoMdMale color="##63CDDA" size={40} /> : <BiFemaleSign color="#F854CD" size={40} />}
           </S.Toppo>
           <S.TodosDados>
           <div className="especie">

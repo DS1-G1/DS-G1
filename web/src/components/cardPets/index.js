@@ -24,7 +24,7 @@ const CardPets = ({dataPet}) => {
           <C.Location><BiCurrentLocation />{dataPet.location}</C.Location>
         </C.InfoDiv>
         <C.IconSex>
-          {dataPet.sexo==="M" ? <IoMdMale/> : <BiFemaleSign/>}
+          {dataPet.sexo==="Macho" ? <IoMdMale/> : <BiFemaleSign/>}
           
         </C.IconSex>
       </C.PetInfo>
