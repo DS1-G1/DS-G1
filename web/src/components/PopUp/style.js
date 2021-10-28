@@ -8,7 +8,6 @@ export const Conteiner = styled.div`
     height: 100vh;
     background-color: rgba(0,0,0,0.2);
 
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,48 +20,48 @@ export const Conteudo = styled.div`
     background-color: #fff;
 
     display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 50px;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
 
-  border-radius: 10px;
+    border-radius: 10px;
 
 `;
 
 
 export const Image = styled.img` 
- width: 520px;
+    width: 520px;
 
 `;
 
 export const Dados = styled.div`
-padding: 35px;
+    padding: 35px;
 
-background: #F7F7F7;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 20px;
+    background: #F7F7F7;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
 
-display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
 `
 
 export const Toppo = styled.div` 
-display: flex;
+    display: flex;
 
 `;
 
 export const TodosDados = styled.div`
-margin-top: 20px;
- display: grid;
-grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 
 
 `
 
 export const Butpms = styled.div` 
-margin-left: 20px;
-width: 100%;
-display: flex;
-justify-content: space-between;
-align-items: center;
+    margin-left: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 `;
