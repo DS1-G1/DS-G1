@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import ButtonBlue from "../buttonBlue";
@@ -43,14 +44,15 @@ const TelaCadastroUser = () => {
   } = useForm({
     resolver: yupResolver(SignupSchema),
   });
+  let history = useHistory();
   const [checkedAdopt, setCheckedAdopt] = useState(false);
   const [checkedDivulgar, setCheckedDivulgar] = useState(false);
   const [tipo, setTipo] = useState("");
 
   const onSubmit = async (data) => {
-    console.log(data);
     await userService.create(data);
     reset();
+    history.push("/login");
   };
   const onError = (errors, e) => console.log(errors, e);
 

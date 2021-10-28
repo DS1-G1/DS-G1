@@ -46,7 +46,7 @@ export const Imput = styled.input`
 `;
 
 export const Containerselect = styled.div`
-  margin-top: 10%;
+  margin-top: 5%;
   color: #989494;
   font-size: 16px;
   border: 0.5px;
@@ -90,4 +90,12 @@ export const Title = styled.h1`
   font-size: 45px;
   font-weight: bolder;
   margin-top: -10%;
+`;
+
+export const subTitle = styled.h1`
+  font-family: "Baloo Tamma", cursive;
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: center;
+  margin-top: 5%;
 `;
