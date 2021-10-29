@@ -34,6 +34,7 @@ const mapPets = (petArray) =>
       sobre: pet.descricao,
       location: pet.localizacao ?? "Local Não definido",
       local: pet.localizacao ?? "Local Não definido",
+      telefone: pet.telefone,
       image: "http://placeimg.com/640/480/animals",
     };
   });
