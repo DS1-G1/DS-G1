@@ -12,9 +12,11 @@ export default class PetController {
       especie,
       porte,
       raca,
-      dataNascimento,
+      idade,
       descricao,
       localizacao,
+      telefone,
+      nomeDoador,
     } = req.body;
     console.log(req.body);
     for (const [key, value] of Object.entries(req.body)) {
@@ -29,9 +31,11 @@ export default class PetController {
       especie,
       porte,
       raca,
-      dataNascimento,
+      idade,
       descricao,
       localizacao,
+      telefone,
+      nomeDoador,
     });
     res.send(pet);
   }

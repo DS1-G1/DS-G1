@@ -25,14 +25,15 @@ const mapPets = (petArray) =>
     return {
       id: pet.id_pet,
       petname: pet.nome || "Sem Nome",
-      ong: "Anonimo",
+      ong: pet.nomeDoador ?? "Anonimo",
       especie: pet.especie,
       sexo: pet.sexo,
       porte: pet.porte,
       raca: pet.raca ?? "desconhecida",
-      dataNascimento: pet.dataNascimento,
-      descricao: pet.descricao,
+      idade: pet.idade + " Anos",
+      sobre: pet.descricao,
       location: pet.localizacao ?? "Local Não definido",
+      local: pet.localizacao ?? "Local Não definido",
       image: "http://placeimg.com/640/480/animals",
     };
   });
@@ -49,14 +50,18 @@ const Adopt = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <div className="containerPet">
-        {dataPet1.map((pet) => (
-          <div key={pet.id} className="cardPet">
-            <CardPets dataPet={pet} />
-            <PopUp dataProps={pet} />
-          </div>
-        ))}
-      </div>
+      {dataPet1.length ? (
+        <div className="containerPet">
+          {dataPet1.map((pet) => (
+            <div key={pet.id} className="cardPet">
+              <CardPets dataPet={pet} />
+              <PopUp dataProps={pet} />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="nao-tem-pets">Não há Pets cadastrados</div>
+      )}
     </div>
   );
 };

@@ -1,18 +1,48 @@
-import { useState } from "react";
 import * as S from "./style";
 import Button from "../buttonBlue";
-import Select from "react-select";
-import { sexo, porte, idade, local, especie, options } from "./optionsData";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { petService } from "../../service";
+import { Redirect } from "react-router";
 
 const FormCadastro = () => {
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
-
-
-
-
-  console.log(watch("example"));
+  const [redir, setRedir] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = async (data) => {
+    console.log(data);
+    const {
+      especie,
+      idade,
+      local,
+      nomeDoador,
+      nomepet,
+      porte,
+      sexo,
+      sobre,
+      telefone,
+    } = data;
+    petService
+      .create({
+        especie,
+        idade,
+        localizacao: local,
+        nomeDoador,
+        nome: nomepet,
+        porte,
+        sexo,
+        descricao: sobre,
+        telefone,
+      })
+      .then(() => setRedir(true));
+  };
+  if (redir) {
+    return <Redirect to="/adopt" />;
+  }
   return (
     <S.Conteiner>
       <S.Title>Faça o cadastro do pet</S.Title>
@@ -33,24 +63,35 @@ const FormCadastro = () => {
             type="text"
             {...register("nomeDoador")}
           />
-          <S.Imput className="pet-nome" placeholder="Telefone" type="text" {...register("telefone")} />
+          <S.Imput
+            className="pet-nome"
+            placeholder="Telefone"
+            type="text"
+            {...register("telefone")}
+          />
         </S.Containerselect>
         <S.subTitle>Dados do Pet</S.subTitle>
         <S.Containerselect>
-          <S.Imput className="nomepet" placeholder="Nome do pet" type="text" {...register("nomepet")} />
+          <S.Imput
+            className="pet-nome"
+            placeholder="Nome do pet"
+            type="text"
+            {...register("nomepet")}
+          />
           <S.Select className="especie" {...register("especie")}>
-            <option value="cachorro">Cachorro</option>
-            <option value="gato" selected>Gato</option>
+            <option value="Cachorro">Cachorro</option>
+            <option value="Gato" selected>
+              Gato
+            </option>
           </S.Select>
           <S.Select className="porte" {...register("porte")}>
-            <option value="pequeno">Pequeno</option>
-            <option value="médio" > Médio </option>
-            <option value="grande"> Grande</option>
-
+            <option value="Pequeno">Pequeno</option>
+            <option value="Medio"> Médio </option>
+            <option value="Grande"> Grande</option>
           </S.Select>
 
           <S.Select className="idade" {...register("idade")}>
-            <option value="menosde1"> Menos de 1 ano </option>
+            <option value="0"> Menos de 1 ano </option>
             <option value="1">1 ano</option>
             <option value="2"> 2 anos </option>
             <option value="3">3 anos</option>
@@ -64,42 +105,46 @@ const FormCadastro = () => {
           </S.Select>
 
           <S.Select className="local" {...register("local")}>
-            <option value="df">DF - Distrito Federal" </option>
-            <option value="ac">AC - Acre" </option>
-            <option value="ap">AP - Amapá" </option>
-            <option value="am">AM - Amazonas" </option>
-            <option value="pa">PA - Pará" </option>
-            <option value="ro">RO - Rondônia" </option>
-            <option value="rr">RR - Roraima" </option>
-            <option value="to">TO - Tocantins" </option>
-            <option value="al">AL - Alagoas" </option>
-            <option value="ba">BA - Bahia" </option>
-            <option value="ce">CE - Ceará" </option>
-            <option value="ma">MA - Maranhão" </option>
-            <option value="pb">PB - Paraíba" </option>
-            <option value="pe">PE - Pernambuco" </option>
-            <option value="pi">PI - Piauí" </option>
-            <option value="rn">RN - Rio Grande do Norte" </option>
-            <option value="se">SE - Sergipe" </option>
-            <option value="es">ES - Espírito Santo" </option>
-            <option value="mg">MG - Minas Gerais" </option>
-            <option value="rj">RJ - Rio de Janeiro" </option>
-            <option value="sp">SP - São Paulo" </option>
-            <option value="pr">PR - Paraná" </option>
-            <option value="rs">RS - Rio Grande do Sul" </option>
-            <option value="sc">SC - Santa Catarina" </option>
-            <option value="go">GO - Goiás" </option>
-            <option value="mt">MT - Mato Grosso" </option>
-            <option value="ms">MS - Mato Grosso do Sul" </option>
+            <option value="DF">DF - Distrito Federal" </option>
+            <option value="AC">AC - Acre" </option>
+            <option value="AP">AP - Amapá" </option>
+            <option value="AM">AM - Amazonas" </option>
+            <option value="PA">PA - Pará" </option>
+            <option value="RO">RO - Rondônia" </option>
+            <option value="RR">RR - Roraima" </option>
+            <option value="TO">TO - Tocantins" </option>
+            <option value="AL">AL - Alagoas" </option>
+            <option value="BA">BA - Bahia" </option>
+            <option value="CE">CE - Ceará" </option>
+            <option value="MA">MA - Maranhão" </option>
+            <option value="PB">PB - Paraíba" </option>
+            <option value="PE">PE - Pernambuco" </option>
+            <option value="PI">PI - Piauí" </option>
+            <option value="RN">RN - Rio Grande do Norte" </option>
+            <option value="SE">SE - Sergipe" </option>
+            <option value="ES">ES - Espírito Santo" </option>
+            <option value="MG">MG - Minas Gerais" </option>
+            <option value="RJ">RJ - Rio de Janeiro" </option>
+            <option value="SP">SP - São Paulo" </option>
+            <option value="PR">PR - Paraná" </option>
+            <option value="RS">RS - Rio Grande do Sul" </option>
+            <option value="SC">SC - Santa Catarina" </option>
+            <option value="GO">GO - Goiás" </option>
+            <option value="MT">MT - Mato Grosso" </option>
+            <option value="MS">MS - Mato Grosso do Sul" </option>
           </S.Select>
 
           <S.Select className="sexo" {...register("sexo")}>
-            <option value= "Macho">Macho</option>
-            <option value= "Femea">Femea</option>
-            <option value= "Indefinido">Indefinido</option>
+            <option value="Macho">Macho</option>
+            <option value="Femea">Femea</option>
           </S.Select>
 
-          <S.Imput className="sobre" placeholder="Sobre o pet" type="text" {...register("sobre")} />
+          <S.Imput
+            className="sobre"
+            placeholder="Sobre o pet"
+            type="text"
+            {...register("sobre")}
+          />
         </S.Containerselect>
         <S.ContainerInput>
           <Button type="submit" style={{ padding: "20px 45px" }}>

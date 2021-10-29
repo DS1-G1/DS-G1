@@ -66,8 +66,8 @@ export const Containerselect = styled.div`
     height: 85px;
   }
   .pet-nome {
-    width: 200px;
-    height: 40px;
+    height: 30px;
+    width: 100%;
   }
 `;
 export const ContainerInput = styled.div`
@@ -100,12 +100,11 @@ export const subTitle = styled.h1`
   margin-top: 5%;
 `;
 
-
 export const Select = styled.select`
-height: 30px;
-width: 100%;
+  height: 30px;
+  width: 100%;
 
-color: #989494;
+  color: #989494;
   font-size: 16px;
   padding: 5px;
 
@@ -116,5 +115,4 @@ color: #989494;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
-  
 `;
