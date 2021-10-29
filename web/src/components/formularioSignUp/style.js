@@ -99,3 +99,22 @@ export const subTitle = styled.h1`
   text-align: center;
   margin-top: 5%;
 `;
+
+
+export const Select = styled.select`
+height: 30px;
+width: 100%;
+
+color: #989494;
+  font-size: 16px;
+  padding: 5px;
+
+  cursor: auto;
+  font-weight: bold;
+
+  border: 0px solid rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  
+`;

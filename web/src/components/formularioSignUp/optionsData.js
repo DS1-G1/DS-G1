@@ -1,15 +1,15 @@
 import { useState } from "react";
 
-const especie = [
+export const especie = [
   { value: "cachorro", label: "Cachorro" },
   { value: "gato", label: "Gato" },
 ];
-const porte = [
+export const porte = [
   { value: "pequeno", label: "Pequeno" },
   { value: "médio", label: "Médio" },
   { value: "grande", label: "Grande" },
 ];
-const idade = [
+export const idade = [
   { value: "menor1", label: "Menos de 1 ano" },
   { value: "um", label: "1 ano" },
   { value: "dois", label: "2 anos" },
@@ -22,7 +22,7 @@ const idade = [
   { value: "maior", label: "9 anos ou mais" },
   { value: "naoSei", label: "Não sei informar" },
 ];
-const local = [
+export const local = [
   { value: "df", label: "DF - Distrito Federal" },
   { value: "ac", label: "AC - Acre" },
   { value: "ap", label: "AP - Amapá" },
@@ -51,7 +51,7 @@ const local = [
   { value: "mt", label: "MT - Mato Grosso" },
   { value: "ms", label: "MS - Mato Grosso do Sul" },
 ];
-const sexo = [
+export const sexo = [
   { value: "Macho", label: "Macho" },
   { value: "Femea", label: "Femea" },
   { value: "Indefinido", label: "Indefinido" },
